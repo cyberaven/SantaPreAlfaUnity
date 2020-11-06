@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        Camera.main.transform.SetParent(transform);
         Rigidbody2D = GetComponent<Rigidbody2D>();
 
         UserControll = Instantiate(UserControll, transform);        

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 
 public class PlayerMoveSystem : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class PlayerMoveSystem : MonoBehaviour
 
     [SerializeField] private float MoveUpSpeed = 10f;
     [SerializeField] private ForceMode2D ForceMode2D = ForceMode2D.Force;
+    [SerializeField] private bool RotateToCourseEnable = true;
 
     public void GiveMeRb2D(Player player)
     {
@@ -33,6 +34,19 @@ public class PlayerMoveSystem : MonoBehaviour
 
         UserControll.UserOutEve += Move;
 
+    }
+    private void Update()
+    {
+        RotateToCourse();
+    }
+
+    private void RotateToCourse()
+    {
+        if(RotateToCourseEnable)
+        {
+            Debug.Log("" + Rigidbody2D.velocity.normalized);
+            Player.transform.up = Rigidbody2D.velocity.normalized;
+        }        
     }
 
     private void Move(EUserOutSignal signal)
@@ -58,6 +72,6 @@ public class PlayerMoveSystem : MonoBehaviour
             Debug.Log("Fly left.");
             //-1 переворачивает вектор вверх ногами.
             Rigidbody2D.AddForce(Player.gameObject.transform.right * -1 * MoveUpSpeed, ForceMode2D);
-        }
+        }  
     }
 }
