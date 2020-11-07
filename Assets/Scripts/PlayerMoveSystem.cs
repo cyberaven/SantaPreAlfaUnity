@@ -10,7 +10,7 @@ public class PlayerMoveSystem : MonoBehaviour
 
     [SerializeField] private float MoveUpSpeed = 10f;
     [SerializeField] private ForceMode2D ForceMode2D = ForceMode2D.Force;
-    [SerializeField] private bool RotateToCourseEnable = true;
+    [SerializeField] private bool RotateToCourseEnable = true;    
 
     public void GiveMeRb2D(Player player)
     {
@@ -37,14 +37,14 @@ public class PlayerMoveSystem : MonoBehaviour
     }
     private void Update()
     {
-        RotateToCourse();
+        RotateToCourse();        
+        Debug.Log("Speed: " + Rigidbody2D.velocity.magnitude);
     }
 
     private void RotateToCourse()
     {
         if(RotateToCourseEnable)
-        {
-            Debug.Log("" + Rigidbody2D.velocity.normalized);
+        {            
             Player.transform.up = Rigidbody2D.velocity.normalized;
         }        
     }

@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04857310368f3db42a956306615a1439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSize: {x: 1000, y: 1000, z: 1000}

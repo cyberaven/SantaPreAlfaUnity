@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Singelton;
     [SerializeField] private UserControll UserControll;
     [SerializeField] private PlayerMoveSystem PlayerMoveSystem;
 
     private Rigidbody2D Rigidbody2D;   
 
-
     private void Awake()
-    {
+    {        
+        Singelton = this;
+
         Camera.main.transform.SetParent(transform);
         Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -36,5 +38,9 @@ public class Player : MonoBehaviour
         {
             throw new Exception("UserControll NULL go: " + gameObject);
         }
+    }
+    public float GetSpeed()
+    {
+        return Rigidbody2D.velocity.magnitude;
     }
 }

@@ -11,11 +11,9 @@ public class CyberavenUtilites : MonoBehaviour
 
         return new Vector2(x, y);
     }
-
     public static Vector3 RandomSize(Vector3 maxSize)
     {
         float r = Random.Range(0, maxSize.x);        
         return new Vector3(r,r,r);
     }
-
 }
