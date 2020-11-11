@@ -1,0 +1,139 @@
+
+HOUSE_1.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+House
+  rotate: false
+  xy: 2, 91
+  size: 554, 494
+  orig: 554, 494
+  offset: 0, 0
+  index: -1
+Karniz_Light
+  rotate: true
+  xy: 1566, 13
+  size: 496, 48
+  orig: 498, 63
+  offset: 0, 15
+  index: -1
+Karniz_Light2
+  rotate: 270
+  xy: 1531, 34
+  size: 507, 38
+  orig: 507, 63
+  offset: 0, 14
+  index: -1
+Karniz_Light3
+  rotate: 180
+  xy: 683, 8
+  size: 508, 49
+  orig: 508, 64
+  offset: 0, 15
+  index: -1
+LIght_Truba
+  rotate: true
+  xy: 1615, 150
+  size: 211, 64
+  orig: 211, 64
+  offset: 0, 0
+  index: -1
+LIght_Truba2
+  rotate: false
+  xy: 2, 23
+  size: 208, 66
+  orig: 208, 66
+  offset: 0, 0
+  index: -1
+LIght_Truba3
+  rotate: false
+  xy: 212, 25
+  size: 208, 65
+  orig: 208, 65
+  offset: 0, 0
+  index: -1
+Light
+  rotate: false
+  xy: 558, 120
+  size: 244, 464
+  orig: 244, 464
+  offset: 0, 0
+  index: -1
+Positiv
+  rotate: false
+  xy: 1599, 482
+  size: 69, 68
+  orig: 69, 68
+  offset: 0, 0
+  index: -1
+Star
+  rotate: false
+  xy: 1616, 69
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+Stars
+  rotate: false
+  xy: 1153, 39
+  size: 205, 188
+  orig: 205, 188
+  offset: 0, 0
+  index: -1
+TOP_light
+  rotate: true
+  xy: 804, 62
+  size: 522, 120
+  orig: 522, 120
+  offset: 0, 0
+  index: -1
+TOP_light 2
+  rotate: true
+  xy: 926, 61
+  size: 523, 115
+  orig: 523, 115
+  offset: 0, 0
+  index: -1
+TOP_light3
+  rotate: true
+  xy: 1043, 58
+  size: 526, 108
+  orig: 526, 108
+  offset: 0, 0
+  index: -1
+TRUBA
+  rotate: false
+  xy: 479, 13
+  size: 202, 107
+  orig: 202, 107
+  offset: 0, 0
+  index: -1
+Vodostok
+  rotate: true
+  xy: 1193, 3
+  size: 34, 322
+  orig: 34, 322
+  offset: 0, 0
+  index: -1
+Window
+  rotate: false
+  xy: 1357, 388
+  size: 172, 196
+  orig: 172, 196
+  offset: 0, 0
+  index: -1
+Window_Jalusi
+  rotate: false
+  xy: 1360, 130
+  size: 171, 196
+  orig: 171, 196
+  offset: 0, 0
+  index: -1
+Window_Light_Circle
+  rotate: false
+  xy: 1153, 229
+  size: 206, 208
+  orig: 206, 208
+  offset: 0, 0
+  index: -1

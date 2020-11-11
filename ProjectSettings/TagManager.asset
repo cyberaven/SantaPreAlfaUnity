@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - House
+  - Lamppost
+  - Virus
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,40 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: LevelBg
+    uniqueID: 3517245413
+    locked: 0
+  - name: SkyBack2
+    uniqueID: 2995234883
+    locked: 0
+  - name: SkyBack1
+    uniqueID: 3491546423
+    locked: 0
+  - name: BGHouse2
+    uniqueID: 338840767
+    locked: 0
+  - name: BGHouse1
+    uniqueID: 552100061
+    locked: 0
+  - name: Cloud
+    uniqueID: 3075828689
+    locked: 0
+  - name: House
+    uniqueID: 1280382025
+    locked: 0
+  - name: Lamppost
+    uniqueID: 2803374261
+    locked: 0
+  - name: Virus
+    uniqueID: 843533515
+    locked: 0
+  - name: Bullet
+    uniqueID: 3249794305
+    locked: 0
+  - name: Santa
+    uniqueID: 3059432103
+    locked: 0
+  - name: GameUI
+    uniqueID: 1020032709
     locked: 0

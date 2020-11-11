@@ -1,0 +1,363 @@
+
+Santa.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ARM_L
+  rotate: false
+  xy: 313, 93
+  size: 241, 153
+  orig: 241, 154
+  offset: 0, 0
+  index: -1
+ARM_R
+  rotate: false
+  xy: 825, 95
+  size: 278, 102
+  orig: 278, 102
+  offset: 0, 0
+  index: -1
+Arm1_Elf
+  rotate: false
+  xy: 922, 556
+  size: 208, 91
+  orig: 208, 91
+  offset: 0, 0
+  index: -1
+Arm2_Elf
+  rotate: false
+  xy: 786, 492
+  size: 158, 62
+  orig: 158, 62
+  offset: 0, 0
+  index: -1
+Aura
+  rotate: false
+  xy: 2, 461
+  size: 492, 681
+  orig: 1173, 681
+  offset: 681, 0
+  index: -1
+Blik_Glasses
+  rotate: false
+  xy: 607, 1094
+  size: 38, 48
+  orig: 38, 48
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 1643, 467
+  size: 403, 376
+  orig: 403, 376
+  offset: 0, 0
+  index: -1
+Body_Elf
+  rotate: true
+  xy: 1799, 56
+  size: 153, 162
+  orig: 153, 162
+  offset: 0, 0
+  index: -1
+Boroda
+  rotate: 180
+  xy: 1595, 248
+  size: 331, 222
+  orig: 331, 222
+  offset: 0, 0
+  index: -1
+Bot1
+  rotate: false
+  xy: 1056, 733
+  size: 87, 105
+  orig: 87, 105
+  offset: 0, 0
+  index: -1
+Candy
+  rotate: true
+  xy: 1168, 3
+  size: 159, 275
+  orig: 159, 275
+  offset: 0, 0
+  index: -1
+CepiFront
+  rotate: false
+  xy: 1003, 1008
+  size: 300, 134
+  orig: 300, 134
+  offset: 0, 0
+  index: -1
+EYEs
+  rotate: false
+  xy: 1857, 449
+  size: 98, 52
+  orig: 98, 52
+  offset: 0, 0
+  index: -1
+Fara
+  rotate: false
+  xy: 647, 1023
+  size: 134, 120
+  orig: 134, 120
+  offset: 0, 0
+  index: -1
+Foot1_Elf
+  rotate: false
+  xy: 1552, 679
+  size: 89, 80
+  orig: 89, 80
+  offset: 0, 0
+  index: -1
+Foot2_Elf
+  rotate: false
+  xy: 1640, 1077
+  size: 54, 65
+  orig: 54, 65
+  offset: 0, 0
+  index: -1
+Glases
+  rotate: false
+  xy: 575, 344
+  size: 202, 91
+  orig: 202, 91
+  offset: 0, 0
+  index: -1
+Glasses_Elf
+  rotate: false
+  xy: 216, 343
+  size: 146, 73
+  orig: 146, 73
+  offset: 0, 0
+  index: -1
+Hat_Elf
+  rotate: false
+  xy: 1626, 28
+  size: 173, 160
+  orig: 173, 160
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 1123, 220
+  size: 227, 273
+  orig: 227, 273
+  offset: 0, 0
+  index: -1
+HeadV
+  rotate: 270
+  xy: 1318, 78
+  size: 179, 175
+  orig: 179, 175
+  offset: 0, 0
+  index: -1
+Jopa
+  rotate: false
+  xy: 573, 174
+  size: 325, 155
+  orig: 325, 155
+  offset: 0, 0
+  index: -1
+LEG1
+  rotate: false
+  xy: 495, 582
+  size: 99, 183
+  orig: 99, 183
+  offset: 0, 0
+  index: -1
+Legt1_Elf
+  rotate: false
+  xy: 495, 771
+  size: 63, 62
+  orig: 63, 62
+  offset: 0, 0
+  index: -1
+Legt2_Elf
+  rotate: false
+  xy: 1247, 944
+  size: 64, 62
+  orig: 64, 62
+  offset: 0, 0
+  index: -1
+Luk1
+  rotate: true
+  xy: 962, 624
+  size: 282, 102
+  orig: 282, 102
+  offset: 0, 0
+  index: -1
+Luk2
+  rotate: false
+  xy: 1871, 853
+  size: 174, 67
+  orig: 174, 67
+  offset: 0, 0
+  index: -1
+Lyja1
+  rotate: false
+  xy: 1388, 340
+  size: 193, 59
+  orig: 193, 59
+  offset: 0, 0
+  index: -1
+Meshok
+  rotate: false
+  xy: 1282, 675
+  size: 409, 467
+  orig: 409, 467
+  offset: 0, 0
+  index: -1
+Motor_Rotor
+  rotate: false
+  xy: 364, 248
+  size: 209, 209
+  orig: 209, 209
+  offset: 0, 0
+  index: -1
+Motor_body
+  rotate: false
+  xy: 1263, 398
+  size: 381, 275
+  orig: 381, 275
+  offset: 0, 0
+  index: -1
+Nos
+  rotate: false
+  xy: 1230, 1076
+  size: 75, 67
+  orig: 75, 67
+  offset: 0, 0
+  index: -1
+Pompon
+  rotate: false
+  xy: 1066, 655
+  size: 78, 76
+  orig: 78, 76
+  offset: 0, 0
+  index: -1
+Pompon_Elf
+  rotate: false
+  xy: 1187, 1102
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: -1
+Richag
+  rotate: false
+  xy: 1986, 419
+  size: 59, 156
+  orig: 59, 156
+  offset: 0, 0
+  index: -1
+Rul_Back
+  rotate: false
+  xy: 443, 66
+  size: 381, 88
+  orig: 381, 88
+  offset: 0, 0
+  index: -1
+Rul_Front
+  rotate: false
+  xy: 1398, 180
+  size: 479, 156
+  orig: 479, 156
+  offset: 0, 0
+  index: -1
+SANI_BAck
+  rotate: true
+  xy: 495, 437
+  size: 705, 467
+  orig: 705, 467
+  offset: 0, 0
+  index: -1
+SANI_Front
+  rotate: true
+  xy: 816, 388
+  size: 754, 464
+  orig: 754, 464
+  offset: 0, 0
+  index: -1
+ShadowBoroda
+  rotate: false
+  xy: 1673, 881
+  size: 331, 261
+  orig: 331, 261
+  offset: 0, 0
+  index: -1
+Shadow_Motor
+  rotate: false
+  xy: 2, 185
+  size: 360, 275
+  orig: 360, 275
+  offset: 0, 0
+  index: -1
+Truba_1
+  rotate: 270
+  xy: 733, 147
+  size: 362, 500
+  orig: 362, 500
+  offset: 0, 0
+  index: -1
+Turbo_Motor
+  rotate: false
+  xy: 2, 80
+  size: 202, 110
+  orig: 202, 110
+  offset: 0, 0
+  index: -1
+Uho_Elf
+  rotate: false
+  xy: 1306, 1056
+  size: 37, 86
+  orig: 37, 86
+  offset: 0, 0
+  index: -1
+Usiki
+  rotate: false
+  xy: 943, 8
+  size: 242, 106
+  orig: 242, 106
+  offset: 0, 0
+  index: -1
+ZRAK_L
+  rotate: false
+  xy: 2, 1131
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+ZRAK_R
+  rotate: false
+  xy: 2, 1131
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+motor_Kolpak
+  rotate: false
+  xy: 1993, 1085
+  size: 52, 57
+  orig: 52, 57
+  offset: 0, 0
+  index: -1
+motor_karman
+  rotate: false
+  xy: 917, 1079
+  size: 79, 63
+  orig: 79, 63
+  offset: 0, 0
+  index: -1
+sHAPKA
+  rotate: true
+  xy: 1915, 172
+  size: 300, 130
+  orig: 300, 130
+  offset: 0, 0
+  index: -1
+Слой 1
+  rotate: 180
+  xy: 1487, 52
+  size: 162, 148
+  orig: 162, 148
+  offset: 0, 0
+  index: -1
