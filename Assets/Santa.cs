@@ -3,9 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using Spine.Unity;
 
 public class Santa : MonoBehaviour
 {
+    private SkeletonAnimation SkeletonAnimation;
+    public AnimationReferenceAsset ELF_HIT;
+    public AnimationReferenceAsset ELF_HIT2;
+    public AnimationReferenceAsset ELF_IDLE;
+    public AnimationReferenceAsset SANI_DAMAGE;
+    public AnimationReferenceAsset SANI_FLY;
+    public AnimationReferenceAsset SANTA_DROP;
+    public AnimationReferenceAsset SANTA_IDLE;
+
+
     [SerializeField] private VariableJoystick MoveJoystick;
     [SerializeField] private VariableJoystick ShootJoystick;
 
@@ -19,18 +30,17 @@ public class Santa : MonoBehaviour
 
     private void Awake()
     {
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
     }
     
     private void OnEnable()
     {
         Camera.main.transform.SetParent(transform);
+        SkeletonAnimation.AnimationState.SetAnimation(1, ELF_IDLE, true);
+        SkeletonAnimation.AnimationState.SetAnimation(2, SANTA_IDLE, true);
     }
-    private void OnDisable()
-    {
-        Camera.main.transform.SetParent(null);
-    }
-
+    
     private void FixedUpdate()
     {
         Move();
@@ -55,6 +65,7 @@ public class Santa : MonoBehaviour
                 Vector3 direction = Vector3.up * ShootJoystick.Vertical + Vector3.right * ShootJoystick.Horizontal;
                 Bullet b = Instantiate(Bullet);
                 b.MoveAway(transform.position, direction);
+                SkeletonAnimation.AnimationState.SetAnimation(3, ELF_HIT, false);
                 ShootTime = ShootCooldown;
             }            
         }

@@ -1,34 +1,39 @@
-﻿using System.Collections;
+﻿using Spine.Unity;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    private SpriteRenderer SpriteRenderer;
-
-    [SerializeField] private List<Sprite> Sprites = new List<Sprite>();
-    private int CurrentSprite = 0;
-        
+    private SkeletonAnimation SkeletonAnimation;
+    [SerializeField] private List<AnimationReferenceAsset> Animations = new List<AnimationReferenceAsset>();
+    private int CurrentAnimation = 0;
+    
     private void Awake()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        SpriteRenderer.sprite = Sprites[CurrentSprite];
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();
+     
+    }
+    private void Start()
+    {
+        SkeletonAnimation.AnimationState.SetAnimation(1, Animations[CurrentAnimation], true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-        {
-            SetNextSprite();
+        {           
+            SetNextAnimation();                   
         }
     }
 
-    private void SetNextSprite()
+    private void SetNextAnimation()
     {
-        CurrentSprite++;
-        if (CurrentSprite <= Sprites.Count - 1)
+        CurrentAnimation++;
+        if (CurrentAnimation <= Animations.Count - 1)
         {
-            SpriteRenderer.sprite = Sprites[CurrentSprite];
+            SkeletonAnimation.AnimationState.SetAnimation(1, Animations[CurrentAnimation], true);
         }
     }
 }

@@ -793,6 +793,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Santa
       objectReference: {fileID: 0}
+    - target: {fileID: 1960824048630542078, guid: 5f1e73c978d55e145a1dcd9031db2eed,
+        type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 11400000, guid: 98011affd73b98540b292d6c9bd15469,
+        type: 2}
+    - target: {fileID: 1960824048630542078, guid: 5f1e73c978d55e145a1dcd9031db2eed,
+        type: 3}
+      propertyPath: Animation1
+      value: 
+      objectReference: {fileID: 11400000, guid: 703e04d76d0c7234abc19444fc6be9e5,
+        type: 2}
+    - target: {fileID: 1960824048630542078, guid: 5f1e73c978d55e145a1dcd9031db2eed,
+        type: 3}
+      propertyPath: Animation2
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fedcbe4954f8c54c8b6f2ddc06f75da,
+        type: 2}
+    - target: {fileID: 5511952368403385777, guid: 5f1e73c978d55e145a1dcd9031db2eed,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5768829403342251191, guid: 5f1e73c978d55e145a1dcd9031db2eed,
         type: 3}
       propertyPath: VariableJoystick
@@ -808,15 +831,20 @@ PrefabInstance:
       propertyPath: ShootJoystick
       value: 
       objectReference: {fileID: 2132144966}
+    - target: {fileID: 7400535712786089564, guid: 5f1e73c978d55e145a1dcd9031db2eed,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7595716443720348201, guid: 5f1e73c978d55e145a1dcd9031db2eed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -16.2
       objectReference: {fileID: 0}
     - target: {fileID: 7595716443720348201, guid: 5f1e73c978d55e145a1dcd9031db2eed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 7595716443720348201, guid: 5f1e73c978d55e145a1dcd9031db2eed,
         type: 3}
