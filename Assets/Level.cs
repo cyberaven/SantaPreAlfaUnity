@@ -95,12 +95,20 @@ public class Level : MonoBehaviour
 
     private void CreateCloud()
     {
-        for (int i = 0; i < MaxLeghtLevel * 10; i++)
+        for (int i = 0; i < MaxLeghtLevel * 2; i++)
         {
             Cloud c = Instantiate(Cloud, CloudFolder);
-            int randYValue = UnityEngine.Random.Range(2, 8);
-            int randXIndent = UnityEngine.Random.Range(1, 5);
+            int randYValue = UnityEngine.Random.Range(5, 7);
+            int randXIndent = UnityEngine.Random.Range(1, 200);
             c.transform.position = new Vector3(c.transform.position.x + i + randXIndent, randYValue, 0);
+        }
+        for (int j = 0; j < MaxLeghtLevel * 2; j++)
+        {
+            Cloud d = Instantiate(Cloud, CloudFolder);
+            int randYValueJ = UnityEngine.Random.Range(6, 10);
+            int randXIndentJ = UnityEngine.Random.Range(1, 200);
+            d.transform.position = new Vector3(d.transform.position.x + j + randXIndentJ, randYValueJ, 0);
+            d.transform.localScale = new Vector3(d.transform.localScale.x * 2, d.transform.localScale.y * 2, 0);
         }
     }
 
