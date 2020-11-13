@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7400535712786089564}
   - component: {fileID: 1570876909907060892}
   - component: {fileID: 8211520445657039314}
+  - component: {fileID: 8381074847263527523}
   m_Layer: 0
   m_Name: Santa
   m_TagString: Untagged
@@ -54,9 +55,6 @@ MonoBehaviour:
   SANI_FLY: {fileID: 11400000, guid: c8c8a12e0a0bb604e8620c5303f2ddfe, type: 2}
   SANTA_DROP: {fileID: 11400000, guid: ee7daf9a42f13584f97043959b9c3252, type: 2}
   SANTA_IDLE: {fileID: 11400000, guid: 9474fb48d1090fd4f974561e9c70b691, type: 2}
-  MoveJoystick: {fileID: 0}
-  ShootJoystick: {fileID: 0}
-  Bullet: {fileID: 2917879825729453264, guid: ccfa0e405a87caf429b416761b255d2b, type: 3}
 --- !u!50 &2153137332720779234
 Rigidbody2D:
   serializedVersion: 4
@@ -163,3 +161,17 @@ MonoBehaviour:
   _animationName: 
   loop: 0
   timeScale: 1
+--- !u!114 &8381074847263527523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747630904490540754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1398b22f531ea2142948c23a8fc93677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootSystem: {fileID: 4846116721202872320, guid: 7629c7c4ffe5edf4c824c57fc1d19cf8,
+    type: 3}

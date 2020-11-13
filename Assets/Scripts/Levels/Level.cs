@@ -24,6 +24,9 @@ public class Level : MonoBehaviour
 
     private float MaxLeghtLevel = 10;
 
+    public delegate void LevelCreatedDel(Level level);
+    public static event LevelCreatedDel LevelCreatedEve;
+
     private void Start()    
     {
         CreateBGImg();
@@ -33,6 +36,8 @@ public class Level : MonoBehaviour
         CreateLampPost();
         CreateHouse();
         CreateVirus();
+
+        LevelCreatedEve?.Invoke(this);
     }
 
     private void CreateVirus()
