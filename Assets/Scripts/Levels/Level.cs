@@ -54,7 +54,7 @@ public class Level : MonoBehaviour
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
             Lamppost lamp = Instantiate(Lamppost, LamppostFolder);
-            lamp.transform.position = new Vector3(lamp.transform.position.x + i * 8.3f, lamp.transform.position.y, lamp.transform.position.z);
+            lamp.transform.position = new Vector3(lamp.transform.position.x + i * 18.3f, lamp.transform.position.y - 0.5f, lamp.transform.position.z);
         }
     }
 
@@ -63,7 +63,9 @@ public class Level : MonoBehaviour
         for (int i = 0; i < MaxLeghtLevel * 10; i++)
         {
             House house = Instantiate(House, HouseFolder);
-            house.transform.position = new Vector3(house.transform.position.x + i * 5.5f, house.transform.position.y, house.transform.position.z);
+            house.transform.position = new Vector3(house.transform.position.x + i * 9f, house.transform.position.y + 3f, house.transform.position.z);
+            house.transform.localScale = new Vector3(house.transform.localScale.x * 1.6f, house.transform.localScale.y * 1.6f, 0);
+
         }
     }
 
@@ -87,14 +89,14 @@ public class Level : MonoBehaviour
         {
             BGHouse bGHouse1 = Instantiate(BGHouse1, BGHouseFolder);
             float randYValue = UnityEngine.Random.Range(0, 1);
-            bGHouse1.transform.position = new Vector3(bGHouse1.transform.position.x + i * 20f, bGHouse1.transform.position.y + randYValue, bGHouse1.transform.position.z);
-        }        
-  
+            bGHouse1.transform.position = new Vector3(bGHouse1.transform.position.x + i * 20f, bGHouse1.transform.position.y + randYValue - 1.3f, bGHouse1.transform.position.z);
+        }
+
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
             BGHouse bGHouse2 = Instantiate(BGHouse2, BGHouseFolder);
             float randYValue = UnityEngine.Random.Range(0, 1);
-            bGHouse2.transform.position = new Vector3(bGHouse2.transform.position.x + i * 15f, bGHouse2.transform.position.y + randYValue, bGHouse2.transform.position.z);
+            bGHouse2.transform.position = new Vector3(bGHouse2.transform.position.x + i * 13f, bGHouse2.transform.position.y + randYValue - 1.3f, bGHouse2.transform.position.z);
         }
     }
 
