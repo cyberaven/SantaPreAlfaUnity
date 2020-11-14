@@ -63,7 +63,7 @@ public class Level : MonoBehaviour
         for (int i = 0; i < MaxLeghtLevel * 10; i++)
         {
             House house = Instantiate(House, HouseFolder);
-            house.transform.position = new Vector3(house.transform.position.x + i * 9f, house.transform.position.y + 3f, house.transform.position.z);
+            house.transform.position = new Vector3(house.transform.position.x + i * 9f, house.transform.position.y - 3.5f, house.transform.position.z);
             house.transform.localScale = new Vector3(house.transform.localScale.x * 1.6f, house.transform.localScale.y * 1.6f, 0);
 
         }
