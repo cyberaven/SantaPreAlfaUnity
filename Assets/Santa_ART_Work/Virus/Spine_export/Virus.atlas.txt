@@ -1,0 +1,69 @@
+
+Virus.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Light_1
+  rotate: false
+  xy: 2, 165
+  size: 214, 210
+  orig: 214, 210
+  offset: 0, 0
+  index: -1
+Light_2
+  rotate: false
+  xy: 2, 629
+  size: 288, 289
+  orig: 288, 289
+  offset: 0, 0
+  index: -1
+Rays_around
+  rotate: true
+  xy: 2, 377
+  size: 250, 252
+  orig: 250, 252
+  offset: 0, 0
+  index: -1
+Shera_3
+  rotate: false
+  xy: 2, 6
+  size: 157, 157
+  orig: 157, 157
+  offset: 0, 0
+  index: -1
+Smile
+  rotate: false
+  xy: 222, 294
+  size: 114, 94
+  orig: 114, 94
+  offset: 0, 0
+  index: -1
+Star
+  rotate: false
+  xy: 256, 389
+  size: 75, 82
+  orig: 75, 82
+  offset: 0, 0
+  index: -1
+virus_body_1
+  rotate: 270
+  xy: 161, 2
+  size: 163, 161
+  orig: 163, 161
+  offset: 0, 0
+  index: -1
+virus_body_2
+  rotate: false
+  xy: 218, 167
+  size: 124, 124
+  orig: 124, 124
+  offset: 0, 0
+  index: -1
+virus_eyes
+  rotate: false
+  xy: 293, 474
+  size: 43, 52
+  orig: 43, 52
+  offset: 0, 0
+  index: -1

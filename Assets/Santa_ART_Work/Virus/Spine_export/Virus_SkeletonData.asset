@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: Santa_SkeletonData
+  m_Name: Virus_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 42cd731c4365f09469149914e2873ddf, type: 2}
+  - {fileID: 11400000, guid: 5683735977b5c3f4290fe66330ea9ef1, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 4070e183f486ccd46b4a0ff77484cd5a, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: f58ca6e52104d754fa6393e89bab4ec0, type: 3}
   skeletonDataModifiers: []
   fromAnimation: []
   toAnimation: []

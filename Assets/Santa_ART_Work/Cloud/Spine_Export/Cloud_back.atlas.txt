@@ -1,0 +1,13 @@
+
+Cloud_back.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Cloud_back_6
+  rotate: false
+  xy: 2, 2
+  size: 261, 171
+  orig: 261, 171
+  offset: 0, 0
+  index: -1
