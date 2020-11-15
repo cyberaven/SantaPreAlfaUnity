@@ -8,8 +8,6 @@ TagManager:
   - House
   - Lamppost
   - Virus
-  - Cloud
-  - BGHouse2
   layers:
   - Default
   - TransparentFX

@@ -3,14 +3,7 @@ guid: 6307b9dd8dc64e94086735a7561aaf07
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - ELF_HIT: {fileID: 11400000, guid: 98011affd73b98540b292d6c9bd15469, type: 2}
-  - ELF_HIT2: {fileID: 11400000, guid: 703e04d76d0c7234abc19444fc6be9e5, type: 2}
-  - ELF_IDLE: {fileID: 11400000, guid: 9b5652226e1374143a2147c535622976, type: 2}
-  - SANI_DAMAGE: {fileID: 11400000, guid: 5fedcbe4954f8c54c8b6f2ddc06f75da, type: 2}
-  - SANI_FLY: {fileID: 11400000, guid: c8c8a12e0a0bb604e8620c5303f2ddfe, type: 2}
-  - SANTA_DROP: {fileID: 11400000, guid: ee7daf9a42f13584f97043959b9c3252, type: 2}
-  - SANTA_IDLE: {fileID: 11400000, guid: 9474fb48d1090fd4f974561e9c70b691, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

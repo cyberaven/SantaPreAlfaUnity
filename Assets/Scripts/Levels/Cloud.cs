@@ -1,39 +1,18 @@
-﻿using Spine.Unity;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class Cloud : MonoBehaviour
 {
-    private SkeletonAnimation SkeletonAnimation;
-    [SerializeField] private List<AnimationReferenceAsset> Animations = new List<AnimationReferenceAsset>();
-    private int CurrentAnimation = 0;
-
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        SkeletonAnimation = GetComponent<SkeletonAnimation>();
-
-    }
-    private void Start()
-    {
-        SkeletonAnimation.AnimationState.SetAnimation(1, Animations[CurrentAnimation], true);
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.tag == "Bullet")
-        {
-            SetNextAnimation();
-        }
-    }
-
-    private void SetNextAnimation()
-    {
-        CurrentAnimation++;
-        if (CurrentAnimation <= Animations.Count - 1)
-        {
-            SkeletonAnimation.AnimationState.SetAnimation(1, Animations[CurrentAnimation], true);
-        }
+        
     }
 }

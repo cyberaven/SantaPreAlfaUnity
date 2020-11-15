@@ -89,14 +89,14 @@ public class Level : MonoBehaviour
         {
             BGHouse bGHouse1 = Instantiate(BGHouse1, BGHouseFolder);
             float randYValue = UnityEngine.Random.Range(0, 1);
-            bGHouse1.transform.position = new Vector3(bGHouse1.transform.position.x + i * 20f, bGHouse1.transform.position.y + randYValue - 0.8f, bGHouse1.transform.position.z);
+            bGHouse1.transform.position = new Vector3(bGHouse1.transform.position.x + i * 20f, bGHouse1.transform.position.y + randYValue - 1.3f, bGHouse1.transform.position.z);
         }
 
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
             BGHouse bGHouse2 = Instantiate(BGHouse2, BGHouseFolder);
             float randYValue = UnityEngine.Random.Range(0, 1);
-            bGHouse2.transform.position = new Vector3(bGHouse2.transform.position.x + i * 13f, bGHouse2.transform.position.y + randYValue - 0.8f, bGHouse2.transform.position.z);
+            bGHouse2.transform.position = new Vector3(bGHouse2.transform.position.x + i * 13f, bGHouse2.transform.position.y + randYValue - 1.3f, bGHouse2.transform.position.z);
         }
     }
 
