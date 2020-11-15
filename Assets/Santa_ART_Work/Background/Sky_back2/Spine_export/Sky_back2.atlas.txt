@@ -1,0 +1,13 @@
+
+Sky_back2.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Background/Scky_back_5
+  rotate: false
+  xy: 2, 2
+  size: 1500, 557
+  orig: 1500, 557
+  offset: 0, 0
+  index: -1

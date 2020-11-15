@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: -4832058534761165449}
   - component: {fileID: 5525788428798281804}
   - component: {fileID: 3183793015048837477}
+<<<<<<< HEAD
   - component: {fileID: 1175652708774720199}
+=======
+  - component: {fileID: -7111987027664330067}
+>>>>>>> 9464979c312cc53c4a79cf8f34920a38b4fe415b
   m_Layer: 0
   m_Name: Lamppost
   m_TagString: Lamppost
@@ -48,6 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dce972a4583c14f946ffe85dfcd24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  Animations:
+  - {fileID: 11400000, guid: 49bdc1fca142ee64ab63ba65a12ed6b4, type: 2}
+  - {fileID: 11400000, guid: c1ecd2c26284a6a498c375b32b055703, type: 2}
+  - {fileID: 11400000, guid: 402392b18c59aa3499690345c5957592, type: 2}
+>>>>>>> 9464979c312cc53c4a79cf8f34920a38b4fe415b
 --- !u!58 &4392225419228360318
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +160,11 @@ MonoBehaviour:
   _animationName: 
   loop: 0
   timeScale: 1
+<<<<<<< HEAD
 --- !u!114 &1175652708774720199
+=======
+--- !u!114 &-7111987027664330067
+>>>>>>> 9464979c312cc53c4a79cf8f34920a38b4fe415b
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6819767756509502083}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: d472f40e4e544a24d9411b8058107293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -165,3 +181,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 402392b18c59aa3499690345c5957592, type: 2}
   - {fileID: 11400000, guid: c1ecd2c26284a6a498c375b32b055703, type: 2}
   - {fileID: 11400000, guid: 49bdc1fca142ee64ab63ba65a12ed6b4, type: 2}
+=======
+  m_Script: {fileID: 11500000, guid: 81dce972a4583c14f946ffe85dfcd24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animations:
+  - {fileID: 11400000, guid: 49bdc1fca142ee64ab63ba65a12ed6b4, type: 2}
+  - {fileID: 11400000, guid: c1ecd2c26284a6a498c375b32b055703, type: 2}
+  - {fileID: 11400000, guid: 402392b18c59aa3499690345c5957592, type: 2}
+>>>>>>> 9464979c312cc53c4a79cf8f34920a38b4fe415b
