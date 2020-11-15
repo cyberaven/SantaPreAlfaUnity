@@ -1,18 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
-public class Cloud : MonoBehaviour
+
+public class Cloud : MonoBehaviour, IAnimationPack
 {
-    // Start is called before the first frame update
-    void Start()
+    private SkeletonAnimation SkeletonAnimation;
+    public AnimationReferenceAsset animation;
+
+    private void Awake()
     {
-        
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayIdle()
     {
-        
+        SkeletonAnimation.AnimationState.SetAnimation(1, animation, true);
+    }
+    public void PlayShoot()
+    {
+        throw new NotImplementedException();
+
+    }
+    public void PlayDamage()
+    {
+        throw new NotImplementedException();
     }
 }
