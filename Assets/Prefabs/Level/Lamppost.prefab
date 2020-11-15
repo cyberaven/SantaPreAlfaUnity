@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4832058534761165449}
   - component: {fileID: 5525788428798281804}
   - component: {fileID: 3183793015048837477}
+  - component: {fileID: -7111987027664330067}
   m_Layer: 0
   m_Name: Lamppost
   m_TagString: Lamppost
@@ -47,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dce972a4583c14f946ffe85dfcd24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 21300000, guid: 511a40562a487cf4baca1eb8e934016c, type: 3}
-  - {fileID: 21300000, guid: 0e34c805ba987844aac0a4f0977ea341, type: 3}
-  - {fileID: 21300000, guid: 115530af43dadbd469892ba89a54ce0d, type: 3}
+  Animations:
+  - {fileID: 11400000, guid: 49bdc1fca142ee64ab63ba65a12ed6b4, type: 2}
+  - {fileID: 11400000, guid: c1ecd2c26284a6a498c375b32b055703, type: 2}
+  - {fileID: 11400000, guid: 402392b18c59aa3499690345c5957592, type: 2}
 --- !u!58 &4392225419228360318
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -103,8 +104,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1491593035
+  m_SortingLayer: 8
   m_SortingOrder: 0
 --- !u!33 &5525788428798281804
 MeshFilter:
@@ -152,3 +153,19 @@ MonoBehaviour:
   _animationName: 
   loop: 0
   timeScale: 1
+--- !u!114 &-7111987027664330067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819767756509502083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dce972a4583c14f946ffe85dfcd24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animations:
+  - {fileID: 11400000, guid: 49bdc1fca142ee64ab63ba65a12ed6b4, type: 2}
+  - {fileID: 11400000, guid: c1ecd2c26284a6a498c375b32b055703, type: 2}
+  - {fileID: 11400000, guid: 402392b18c59aa3499690345c5957592, type: 2}
