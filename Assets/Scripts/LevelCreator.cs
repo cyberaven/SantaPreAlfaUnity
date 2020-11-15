@@ -13,7 +13,7 @@ public class LevelCreator : MonoBehaviour
         CreateLevel(FrstLevel);
     }
     public void CreateLevel(int levelId)
-    {
-        Level l = Instantiate(Levels[levelId], transform);
+    {        
+        Level l = Instantiate(Levels[levelId], transform);       
     }
 }

@@ -18,7 +18,7 @@ public class Santa : MonoBehaviour, IAnimationPack
 
     private void Awake()
     {
-        Player.PlayerShotedEve += PlayerShoted;
+        ShootSystem.PlayerShotedEve += PlayerShoted;  
         Player.PlayerCreatedEve += PlayerCreated;
 
         SkeletonAnimation = GetComponent<SkeletonAnimation>();  
@@ -29,9 +29,12 @@ public class Santa : MonoBehaviour, IAnimationPack
     {
         PlayIdle();
     }  
-    private void PlayerShoted(Player player, Vector3 direction)
+    private void PlayerShoted(IPlayer player)
     {
-        PlayShoot();                
+        if (player.GetGameObject() == gameObject)
+        {
+            PlayShoot();
+        }
     }
 
     public void PlayIdle()
