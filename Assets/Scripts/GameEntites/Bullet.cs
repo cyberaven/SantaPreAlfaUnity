@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
         }
         if(collision.tag == "Lamppost")
         {
-            Die();
+            LampCollision(collision);
         }
         if (collision.tag == "Virus")
         {
@@ -40,6 +40,18 @@ public class Bullet : MonoBehaviour
         }
 
     }
+
+    private void LampCollision(Collider2D collision)
+    {
+        Lamppost l = collision.gameObject.GetComponent<Lamppost>();
+        int lampHealth = l.GetHealth();
+
+        if (lampHealth > 0)
+        {
+            Die();
+        }
+    }
+
     private void Die()
     {
         Destroy(gameObject);
