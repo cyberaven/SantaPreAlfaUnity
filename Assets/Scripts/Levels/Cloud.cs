@@ -5,28 +5,13 @@ using UnityEngine;
 using Spine.Unity;
 
 
-public class Cloud : MonoBehaviour, IAnimationPack
+public class Cloud : MonoBehaviour
 {
-    private SkeletonAnimation SkeletonAnimation;
-    public AnimationReferenceAsset animation;
+    public delegate void CloudCreatedDel(Cloud cloud);
+    public static event CloudCreatedDel CloudCreatedEve;
 
     private void Awake()
     {
-        SkeletonAnimation = GetComponent<SkeletonAnimation>();
-
-    }
-
-    public void PlayIdle()
-    {
-        SkeletonAnimation.AnimationState.SetAnimation(1, animation, true);
-    }
-    public void PlayShoot()
-    {
-        throw new NotImplementedException();
-
-    }
-    public void PlayDamage()
-    {
-        throw new NotImplementedException();
+        CloudCreatedEve?.Invoke(this);
     }
 }
