@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] private Transform PlayerStartPosition;
+
     [SerializeField] private Transform CloudFolder;
     [SerializeField] private Transform BGHouseFolder;
     [SerializeField] private Transform SkyBackFolder;
@@ -22,11 +24,10 @@ public class Level : MonoBehaviour
     [SerializeField] private Lamppost Lamppost;
     [SerializeField] private Virus Virus;
 
-    private float MaxLeghtLevel = 10;
+    private Player Player;
 
-    public delegate void LevelCreatedDel(Level level);
-    public static event LevelCreatedDel LevelCreatedEve;
-
+    private float MaxLeghtLevel = 10;    
+    
     private void Start()    
     {
         CreateBGImg();
@@ -35,9 +36,7 @@ public class Level : MonoBehaviour
         CreateSkyBack();
         CreateLampPost();
         CreateHouse();
-        CreateVirus();
-
-        LevelCreatedEve?.Invoke(this);
+        CreateVirus();        
     }
 
     private void CreateVirus()
@@ -124,5 +123,17 @@ public class Level : MonoBehaviour
         LevelBG levelBG = Instantiate(LevelBG, transform);
         levelBG.transform.localScale = new Vector3(MaxLeghtLevel, 3, 1);
         levelBG.transform.position = new Vector3(MaxLeghtLevel * 10 - 20, levelBG.transform.position.y, levelBG.transform.position.z);
+    }
+    public void SetPlayerOnStartPosition()
+    {       
+        Player.transform.position = PlayerStartPosition.position;
+    }
+    public Player GetPlayer()
+    {
+        return Player;
+    }
+    public void SetPlayer(Player player)
+    {
+        Player = player;
     }
 }

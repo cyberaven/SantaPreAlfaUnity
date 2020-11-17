@@ -12,9 +12,15 @@ public class Starter : MonoBehaviour
     {
         GameUI = Instantiate(GameUI);
         LevelCreator = Instantiate(LevelCreator);
-        PlayerCreator = Instantiate(PlayerCreator);
-
+        PlayerCreator = Instantiate(PlayerCreator);        
+    }
+    private void OnEnable()
+    {
         StartButton.StartButtonClkEve += StartButtonClk;
+    }
+    private void OnDisable()
+    {
+        StartButton.StartButtonClkEve -= StartButtonClk;
     }
 
     private void StartButtonClk()

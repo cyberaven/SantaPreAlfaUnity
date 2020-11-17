@@ -7,16 +7,21 @@ public class UserControllsPanel : Panel
 {
     [SerializeField] private VariableJoystick MoveJoystick;
     [SerializeField] private VariableJoystick ShootJoystick;
-
-    private void Awake()
+    
+    private void Start()
     {
-        Player.PlayerCreatedEve += PlayerCreated;
+        LevelCreator.LevelCreatedEve += LevelCreated;
+        PlayerCreator.PlayerCreatedEve += PlayerCreated;
         Hide();
     }
 
     private void PlayerCreated(Player player)
     {
-        Show();
         player.SetControllers(MoveJoystick, ShootJoystick);
+    }
+
+    private void LevelCreated(Level level)
+    {
+        Show();
     }
 }

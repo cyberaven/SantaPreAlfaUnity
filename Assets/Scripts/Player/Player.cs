@@ -10,31 +10,23 @@ public class Player : MonoBehaviour, IPlayer
     [SerializeField] private ShootSystem ShootSystem;
     [SerializeField] private MovingSystem MovingSystem;
     
-    private Rigidbody2D Rigidbody2D;
-
-    public delegate void PlayerCreatedDel(Player player);
-    public static event PlayerCreatedDel PlayerCreatedEve;
+    private Rigidbody2D Rigidbody2D;    
 
     private void Awake()
-    {
-        PlayerCreatedEve?.Invoke(this);
+    {        
         Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        MovingSystem = Instantiate(MovingSystem, transform);
-        MovingSystem.SetPlayer(this);
-
-        ShootSystem = Instantiate(ShootSystem, transform);
-        ShootSystem.SetPlayer(this);
-    }    
-    private void OnEnable()
-    {
-        Camera.main.transform.SetParent(transform);
+        MovingSystem = Instantiate(MovingSystem, transform);        
+        ShootSystem = Instantiate(ShootSystem, transform);        
     }
-    
+   
     public void SetControllers(VariableJoystick moveJoystick, VariableJoystick shootJoystick)
     {
         MoveJoystick = moveJoystick;
+        MovingSystem.SetPlayer(this);
+
         ShootJoystick = shootJoystick;
+        ShootSystem.SetPlayer(this);
     }
     
     public Rigidbody2D GetRigidbody2D()

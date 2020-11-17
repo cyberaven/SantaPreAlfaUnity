@@ -7,6 +7,8 @@ public class LevelCreator : MonoBehaviour
     [SerializeField] private List<Level> Levels = new List<Level>();
     int FrstLevel = 0;
 
+    public delegate void LevelCreatedDel(Level level);
+    public static event LevelCreatedDel LevelCreatedEve;
 
     public void CreateFrstLevel()
     {
@@ -14,6 +16,7 @@ public class LevelCreator : MonoBehaviour
     }
     public void CreateLevel(int levelId)
     {        
-        Level l = Instantiate(Levels[levelId], transform);       
+        Level l = Instantiate(Levels[levelId], transform);
+        LevelCreatedEve?.Invoke(l);
     }
 }

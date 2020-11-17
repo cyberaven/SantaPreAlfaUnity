@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6687048736493531398}
   - component: {fileID: -9015494716364046298}
   - component: {fileID: -7002321093432797114}
+  - component: {fileID: 2706994299392525910}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -131,3 +132,20 @@ MonoBehaviour:
   _animationName: 
   loop: 0
   timeScale: 1
+--- !u!114 &2706994299392525910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520703026003058344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086fa1343c5764e4c803fb91dbd0f510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: {fileID: 0}
+  Idle: {fileID: 11400000, guid: 7547df74c304a954eb8bd496be55ec06, type: 2}
+  Idle1: {fileID: 0}
+  Shoot: {fileID: 0}
+  Shoot1: {fileID: 0}
