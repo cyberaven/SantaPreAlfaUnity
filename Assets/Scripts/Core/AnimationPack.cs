@@ -15,8 +15,7 @@ public class AnimationPack : MonoBehaviour, IAnimationPack
 
     private void Awake()
     {
-        SkeletonAnimation = GetComponent<SkeletonAnimation>();
-        Debug.Log("333: " + SkeletonAnimation);
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();        
         if(!SkeletonAnimation)
         {
             throw new System.Exception("No SkeletonAnimation on gameObject: " + gameObject);
@@ -30,9 +29,6 @@ public class AnimationPack : MonoBehaviour, IAnimationPack
 
     public void PlayIdle()
     {
-        Debug.Log("111 " + SkeletonAnimation);
-        Debug.Log("222 " + Idle);
-
         SkeletonAnimation.AnimationState.SetAnimation(1, Idle, true);
     }
     public void PlayIdle1()

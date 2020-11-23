@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] private Transform WallRightPos;
+
     [SerializeField] private Transform PlayerStartPosition;
 
     [SerializeField] private Transform CloudFolder;
@@ -30,6 +32,7 @@ public class Level : MonoBehaviour
     
     private void Start()    
     {
+        WallRightChangePos();
         CreateBGImg();
         CreateCloud();
         CreateBGHouse();
@@ -37,6 +40,12 @@ public class Level : MonoBehaviour
         CreateLampPost();
         CreateHouse();
         CreateVirus();        
+    }
+
+    private void WallRightChangePos()
+    {
+        Vector3 wallPos = WallRightPos.position;
+        WallRightPos.position = new Vector3(wallPos.x * 10, wallPos.y, wallPos.z);
     }
 
     private void CreateVirus()
