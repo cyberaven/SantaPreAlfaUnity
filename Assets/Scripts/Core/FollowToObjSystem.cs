@@ -29,6 +29,10 @@ public class FollowToObjSystem : MonoBehaviour
         ChangeZ = changeZ;
         FollowEnable = true;
     }
+    public void FollowOff()
+    {
+        FollowEnable = false;
+    }
     
     private void Follow()
     {
@@ -50,8 +54,7 @@ public class FollowToObjSystem : MonoBehaviour
                 newPos = new Vector3(transform.position.x, transform.position.y, fPos.z);
             }
 
-            transform.position = newPos;
-            
+            transform.position = newPos;            
         }
     }   
 }
