@@ -29,6 +29,6 @@ public class MainCamera : MonoBehaviour
     }
     private void LevelCreated(Level level)
     {        
-        FollowToObjSystem.FollowOn(Player.transform);
+        FollowToObjSystem.FollowOn(Player.transform, true, false, false);
     }
 }
