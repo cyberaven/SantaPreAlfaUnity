@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using Spine.Unity;
 
-public class Santa : AnimationPack
+public class Santa : PlrView
 {
-
     private void OnEnable()
     {
         PlayerCreator.PlayerCreatedEve += PlayerCreated;
@@ -19,7 +18,7 @@ public class Santa : AnimationPack
         ShootSystem.PlayerShotedEve -= PlayerShoted;
     }
    
-    private void PlayerCreated(Player player)
+    private void PlayerCreated(PlayerModel player)
     {
         PlayIdle();
         PlayIdle1();

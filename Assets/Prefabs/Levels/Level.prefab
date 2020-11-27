@@ -406,6 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5107250b97de3644cb15631c1bea71a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelViewAsset: {fileID: 0}
+  LevelEnvironment: {fileID: 3221403126214967785, guid: 66736478de0968c41a2f846587b6c642,
+    type: 3}
   WallRightPos: {fileID: 6353087590806189131}
   PlayerStartPosition: {fileID: 127987196817976472}
   CloudFolder: {fileID: 1829296706252787392}

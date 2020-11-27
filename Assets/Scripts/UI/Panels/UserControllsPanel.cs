@@ -15,7 +15,7 @@ public class UserControllsPanel : Panel
         Hide();
     }
 
-    private void PlayerCreated(Player player)
+    private void PlayerCreated(PlayerModel player)
     {
         player.SetControllers(MoveJoystick, ShootJoystick);
     }

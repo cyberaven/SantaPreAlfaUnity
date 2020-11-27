@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Starter : MonoBehaviour
 {
+    [SerializeField] private int LevelId = 0;
+    [SerializeField] private ELvlAssetName LvlAssetName = ELvlAssetName.NONE;
+    [SerializeField] private EPlrViewAssetName PlrViewAssetName = EPlrViewAssetName.NONE;
+    [Space]
     [SerializeField] private GameUI GameUI;
     [SerializeField] private LevelCreator LevelCreator;
     [SerializeField] private PlayerCreator PlayerCreator;
+
+    public delegate void StartGameDel();
+    public static event StartGameDel StartGameEve;
+
 
     private void Awake()
     {
@@ -25,6 +33,11 @@ public class Starter : MonoBehaviour
 
     private void StartButtonClk()
     {
-        LevelCreator.CreateFrstLevel();     
+        Level l = LevelCreator.CreateLevel(0, LvlAssetName);
+        PlayerModel player = PlayerCreator.CreatePlayer(PlrViewAssetName);
+                
+        l.SetPlayerOnStartPosition(player);
+        StartGameEve?.Invoke();
+
     }
 }

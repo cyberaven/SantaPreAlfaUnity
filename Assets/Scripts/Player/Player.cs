@@ -44,5 +44,5 @@ public class Player : MonoBehaviour, IPlayer
     public GameObject GetGameObject()
     {
         return gameObject;
-    }
+    }    
 }

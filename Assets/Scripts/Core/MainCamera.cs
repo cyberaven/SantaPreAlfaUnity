@@ -6,7 +6,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour
 {
     private FollowToObjSystem FollowToObjSystem;
-    private Player Player;
+    private PlayerModel Player;
     private bool CheckPlrPosEnable = false;
 
     private void Awake()
@@ -30,12 +30,14 @@ public class MainCamera : MonoBehaviour
         StartLevelTrigger.StartLevelTriggerVisibleEve -= StartLevelTriggerVisible;
     }
 
-    private void PlayerCreated(Player player)
+    private void PlayerCreated(PlayerModel player)
     {
         Player = player;
     }
     private void LevelCreated(Level level)
-    {        
+    {
+        Debug.Log("123: " + level);
+        Debug.Log("456: " + Player);
         FollowToObjSystem.FollowOn(Player.transform, true, false, false);
     }
 

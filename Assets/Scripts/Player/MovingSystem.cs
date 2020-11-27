@@ -3,9 +3,10 @@ using System.Collections;
 
 
 public class MovingSystem : MonoBehaviour
-{    
+{
+    private IPlayer Player;
     private Rigidbody2D Rigidbody2D;
-    private VariableJoystick MoveJoystick;
+    private VariableJoystick MoveJoystick;    
 
     [SerializeField] private float MoveSpeed = 1000f;
 
@@ -16,8 +17,14 @@ public class MovingSystem : MonoBehaviour
 
     public void SetPlayer(IPlayer player)
     {
-        Rigidbody2D = player.GetRigidbody2D();
-        MoveJoystick = player.GetMovingJoystick();
+        if(player == null)
+        {
+            throw new System.Exception("MovingSystem player is NULL");
+        }
+
+        Player = player;
+        Rigidbody2D = Player.GetRigidbody2D();
+        MoveJoystick = Player.GetMovingJoystick();
     }
     private void Move()
     {

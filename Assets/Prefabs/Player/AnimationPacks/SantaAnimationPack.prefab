@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9028002333473259705
+--- !u!1 &4484148794362419211
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1750598950936639189}
-  - component: {fileID: 2415268943382327778}
+  - component: {fileID: 6828216395857088269}
+  - component: {fileID: 2121233336788485726}
   m_Layer: 0
-  m_Name: PlayerCreator
+  m_Name: SantaAnimationPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1750598950936639189
+--- !u!4 &6828216395857088269
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028002333473259705}
+  m_GameObject: {fileID: 4484148794362419211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,17 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2415268943382327778
+--- !u!114 &2121233336788485726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028002333473259705}
+  m_GameObject: {fileID: 4484148794362419211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab3a41912bb3ea459347ce6be05ffa2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd13439a2185fbe48aa77173acfc7609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 8381074847263527523, guid: 5f1e73c978d55e145a1dcd9031db2eed,
-    type: 3}
+  Damage: {fileID: 11400000, guid: 5fedcbe4954f8c54c8b6f2ddc06f75da, type: 2}
+  Idle: {fileID: 11400000, guid: 9474fb48d1090fd4f974561e9c70b691, type: 2}
+  Idle1: {fileID: 11400000, guid: 9b5652226e1374143a2147c535622976, type: 2}
+  Shoot: {fileID: 11400000, guid: 98011affd73b98540b292d6c9bd15469, type: 2}
+  Shoot1: {fileID: 11400000, guid: 703e04d76d0c7234abc19444fc6be9e5, type: 2}

@@ -5,11 +5,11 @@ using Spine.Unity;
 
 public class AnimationPack : MonoBehaviour, IAnimationPack
 {
-    [SerializeField] private AnimationReferenceAsset Damage;
-    [SerializeField] private AnimationReferenceAsset Idle;
-    [SerializeField] private AnimationReferenceAsset Idle1;
-    [SerializeField] private AnimationReferenceAsset Shoot;
-    [SerializeField] private AnimationReferenceAsset Shoot1;
+    [SerializeField] public AnimationReferenceAsset Damage;
+    [SerializeField] public AnimationReferenceAsset Idle;
+    [SerializeField] public AnimationReferenceAsset Idle1;
+    [SerializeField] public AnimationReferenceAsset Shoot;
+    [SerializeField] public AnimationReferenceAsset Shoot1;
 
     private SkeletonAnimation SkeletonAnimation;
 
