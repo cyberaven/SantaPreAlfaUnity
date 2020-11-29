@@ -507,7 +507,6 @@ GameObject:
   - component: {fileID: 6161566521955140573}
   - component: {fileID: 2745909774194720256}
   - component: {fileID: 2818684541891993532}
-  - component: {fileID: 608357945916838848}
   - component: {fileID: 6695045995507269628}
   m_Layer: 0
   m_Name: WallLeft
@@ -577,18 +576,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &608357945916838848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7781812403349822300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de2f85ebccf284d428085c99b0225646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &6695045995507269628
 SpriteRenderer:
   m_ObjectHideFlags: 0

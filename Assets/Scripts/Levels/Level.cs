@@ -7,21 +7,15 @@ public class Level : MonoBehaviour
 {    
     [SerializeField] public LevelEnvironment LevelEnvironment;
 
-    [SerializeField] private Transform WallRightPos;
-
-    [SerializeField] private Transform PlayerStartPosition;   
+    [SerializeField] private Transform WallRightPos;   
 
     private PlayerModel Player;    
 
     private void Start()    
     {
         WallRightChangePos();                
-    }
+    }    
     
-    public void SetPlayerOnStartPosition(PlayerModel player)
-    {       
-        player.transform.position = PlayerStartPosition.position;
-    }
     public PlayerModel GetPlayer()
     {
         return Player;

@@ -34,9 +34,7 @@ public class Starter : MonoBehaviour
     private void StartButtonClk()
     {
         PlayerModel player = PlayerCreator.CreatePlayer(PlrViewAssetName);
-        Level l = LevelCreator.CreateLevel(0, LvlAssetName);        
-                
-        l.SetPlayerOnStartPosition(player);
+        Level l = LevelCreator.CreateLevel(0, LvlAssetName);         
         StartGameEve?.Invoke();
     }
 }

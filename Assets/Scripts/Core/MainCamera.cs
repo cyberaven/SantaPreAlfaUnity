@@ -20,14 +20,12 @@ public class MainCamera : MonoBehaviour
     private void OnEnable()
     {
         LevelCreator.LevelCreatedEve += LevelCreated;
-        PlayerCreator.PlayerCreatedEve += PlayerCreated;
-        StartLevelTrigger.StartLevelTriggerVisibleEve += StartLevelTriggerVisible;
+        PlayerCreator.PlayerCreatedEve += PlayerCreated;        
     }
     private void OnDisable()
     {
         LevelCreator.LevelCreatedEve -= LevelCreated;
         PlayerCreator.PlayerCreatedEve -= PlayerCreated;
-        StartLevelTrigger.StartLevelTriggerVisibleEve -= StartLevelTriggerVisible;
     }
 
     private void PlayerCreated(PlayerModel player)
@@ -35,9 +33,7 @@ public class MainCamera : MonoBehaviour
         Player = player;
     }
     private void LevelCreated(Level level)
-    {
-        Debug.Log("123: " + level);
-        Debug.Log("456: " + Player);
+    {        
         FollowToObjSystem.FollowOn(Player.transform, true, false, false);
     }
 
