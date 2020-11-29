@@ -325,6 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baa7ef7938e8e64dacc5f492a2f0e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelId: 0
+  LvlAssetName: 1
+  PlrViewAssetName: 1
   GameUI: {fileID: 3664020268084366015, guid: ecf2079d68e56d64aabfd67e8aa6e08f, type: 3}
   LevelCreator: {fileID: 2398530758885634066, guid: d8eb620ac8491e24e82ecd4d25fa459b,
     type: 3}

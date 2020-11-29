@@ -6,7 +6,9 @@ using System;
 public class LevelCreator : MonoBehaviour
 {
     [SerializeField] private List<Level> Levels = new List<Level>();   
+    [Space]
     [SerializeField] private List<LevelViewAsset> LevelViewAssets = new List<LevelViewAsset>();
+    [Space]
     [SerializeField] private int MaxLeghtLevel = 10;
 
     public delegate void LevelCreatedDel(Level level);
@@ -25,8 +27,7 @@ public class LevelCreator : MonoBehaviour
         else
         {
             LevelViewAsset levelViewAsset = GetLevelViewAsset(name);
-            Level l = Instantiate(Levels[id], transform);
-            l.SetViewAsset(levelViewAsset);
+            Level l = Instantiate(Levels[id], transform);            
             LevelCreatedEve?.Invoke(l);
             return l;
         }
@@ -40,15 +41,15 @@ public class LevelCreator : MonoBehaviour
         Level l = Instantiate(Levels[0], transform);
 
         l.LevelEnvironment.LevelBG = CreateBGImg(levelViewAsset.GetLevelBG(), l.transform);
-        l.LevelEnvironment.Clouds = CreateCloud();
-        CreateBGHouse();
-        CreateSkyBack();
-        CreateLampPost();
-        CreateHouse();
-        CreateVirus();
-
-        
-        l.SetViewAsset(levelViewAsset);
+        l.LevelEnvironment.Clouds = CreateCloud(levelViewAsset.GetCloud(), l.LevelEnvironment.CloudFolder);        
+        l.LevelEnvironment.BGHouse.AddRange(CreateBGHouse1(levelViewAsset.GetBGHouse1(), l.LevelEnvironment.BGHouseFolder));
+        l.LevelEnvironment.BGHouse.AddRange(CreateBGHouse2(levelViewAsset.GetBGHouse2(), l.LevelEnvironment.BGHouseFolder));
+        l.LevelEnvironment.SkyBacks.AddRange(CreateSkyBack1(levelViewAsset.GetSkyBack1(), l.LevelEnvironment.SkyBackFolder));
+        l.LevelEnvironment.SkyBacks.AddRange(CreateSkyBack2(levelViewAsset.GetSkyBack2(), l.LevelEnvironment.SkyBackFolder));
+        l.LevelEnvironment.Lampposts = CreateLampPost(levelViewAsset.GetLamppost(), l.LevelEnvironment.LamppostFolder);
+        l.LevelEnvironment.Houses = CreateHouse(levelViewAsset.GetHouse(), l.LevelEnvironment.HouseFolder);
+        l.LevelEnvironment.Viruses = CreateVirus(levelViewAsset.GetVirus(), l.LevelEnvironment.VirusFolder);
+       
         return l;
     }
 
@@ -68,83 +69,123 @@ public class LevelCreator : MonoBehaviour
 
     
 
-    private void CreateVirus()
+    private List<Virus> CreateVirus(Virus virus, Transform parent)
     {
-        for (int i = 0; i < MaxLeghtLevel * 10; i++)
-        {
-            Virus virus = Instantiate(Virus, VirusFolder);
-            virus.transform.position = new Vector3(i * 20f, virus.transform.position.y, virus.transform.position.z);
-        }
-    }
-    private void CreateLampPost()
-    {
-        for (int i = 0; i < MaxLeghtLevel; i++)
-        {
-            Lamppost lamp = Instantiate(Lamppost, LamppostFolder);
-            lamp.transform.position = new Vector3(lamp.transform.position.x + i * 18.3f, lamp.transform.position.y - 0.5f, lamp.transform.position.z);
-        }
-    }
-    private void CreateHouse()
-    {
-        for (int i = 0; i < MaxLeghtLevel * 10; i++)
-        {
-            House house = Instantiate(House, HouseFolder);
-            house.transform.position = new Vector3(house.transform.position.x + i * 9f, house.transform.position.y - 3.5f, house.transform.position.z);
-            house.transform.localScale = new Vector3(house.transform.localScale.x * 1.6f, house.transform.localScale.y * 1.6f, 0);
+        List<Virus> result = new List<Virus>();
 
+        for (int i = 0; i < MaxLeghtLevel * 10; i++)
+        {
+            Virus v = Instantiate(virus, parent);
+            v.transform.position = new Vector3(i * 20f, v.transform.position.y, v.transform.position.z);
+            result.Add(v);
         }
+
+        return result;
     }
-    private void CreateSkyBack()
+    private List<Lamppost> CreateLampPost(Lamppost lamppost, Transform parent)
     {
+        List<Lamppost> result = new List<Lamppost>();
+
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
-            SkyBack skyBack1 = Instantiate(SkyBack1, SkyBackFolder);
+            Lamppost lamp = Instantiate(lamppost, parent);
+            lamp.transform.position = new Vector3(lamp.transform.position.x + i * 18.3f, lamp.transform.position.y - 0.5f, lamp.transform.position.z);
+            result.Add(lamp);
+        }
+
+        return result;
+    }
+    private List<House> CreateHouse(House house, Transform parent)
+    {
+        List<House> result = new List<House>();
+
+        for (int i = 0; i < MaxLeghtLevel * 10; i++)
+        {
+            House h = Instantiate(house, parent);
+            h.transform.position = new Vector3(h.transform.position.x + i * 9f, h.transform.position.y - 3.5f, h.transform.position.z);
+            h.transform.localScale = new Vector3(h.transform.localScale.x * 1.6f, h.transform.localScale.y * 1.6f, 0);
+            result.Add(h);
+        }
+
+        return result;
+    }
+    private List<SkyBack> CreateSkyBack1(SkyBack skyBack, Transform parent)
+    {
+        List<SkyBack> result = new List<SkyBack>();
+
+        for (int i = 0; i < MaxLeghtLevel; i++)
+        {
+            SkyBack skyBack1 = Instantiate(skyBack, parent);
             skyBack1.transform.position = new Vector3(skyBack1.transform.position.x + i * 20f, skyBack1.transform.position.y, skyBack1.transform.position.z);
-        }
-        for (int i = 0; i < MaxLeghtLevel; i++)
-        {
-            SkyBack skyBack2 = Instantiate(SkyBack2, SkyBackFolder);
-            skyBack2.transform.position = new Vector3(skyBack2.transform.position.x + i * 20f, skyBack2.transform.position.y, skyBack2.transform.position.z);
-        }
+            result.Add(skyBack1);
+        }        
+
+        return result;
     }
-    private void CreateBGHouse()
+    private List<SkyBack> CreateSkyBack2(SkyBack skyBack, Transform parent)
     {
+        List<SkyBack> result = new List<SkyBack>();
+        
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
-            BGHouse bGHouse1 = Instantiate(BGHouse1, BGHouseFolder);
+            SkyBack skyBack2 = Instantiate(skyBack, parent);
+            skyBack2.transform.position = new Vector3(skyBack2.transform.position.x + i * 20f, skyBack2.transform.position.y, skyBack2.transform.position.z);
+            result.Add(skyBack2);
+        }
+
+        return result;
+    }
+    private List<BGHouse> CreateBGHouse1(BGHouse bGHouse, Transform parent)
+    {
+        List<BGHouse> result = new List<BGHouse>();
+
+        for (int i = 0; i < MaxLeghtLevel; i++)
+        {
+            BGHouse bGHouse1 = Instantiate(bGHouse, parent);
             float randYValue = UnityEngine.Random.Range(0, 1);
             bGHouse1.transform.position = new Vector3(bGHouse1.transform.position.x + i * 20f, bGHouse1.transform.position.y + randYValue - 1.3f, bGHouse1.transform.position.z);
+            result.Add(bGHouse1);
         }
+
+        return result;
+    }
+    private List<BGHouse> CreateBGHouse2(BGHouse bGHouse, Transform parent)
+    {
+        List<BGHouse> result = new List<BGHouse>();
 
         for (int i = 0; i < MaxLeghtLevel; i++)
         {
-            BGHouse bGHouse2 = Instantiate(BGHouse2, BGHouseFolder);
+            BGHouse bGHouse2 = Instantiate(bGHouse, parent);
             float randYValue = UnityEngine.Random.Range(0, 1);
             bGHouse2.transform.position = new Vector3(bGHouse2.transform.position.x + i * 13f, bGHouse2.transform.position.y + randYValue - 1.3f, bGHouse2.transform.position.z);
+            result.Add(bGHouse2);
         }
+
+        return result;
     }
-    private List<Cloud> CreateCloud()
+    private List<Cloud> CreateCloud(Cloud cloud, Transform parent)
     {
         List<Cloud> result = new List<Cloud>();
 
         for (int i = 0; i < MaxLeghtLevel * 2; i++)
         {
-            Cloud c = Instantiate(Cloud, CloudFolder);
+            Cloud c = Instantiate(cloud, parent);
             int randYValue = UnityEngine.Random.Range(5, 7);
             int randXIndent = UnityEngine.Random.Range(1, 200);
             c.transform.position = new Vector3(c.transform.position.x + i + randXIndent, randYValue, 0);
+            result.Add(c);
         }
         for (int j = 0; j < MaxLeghtLevel * 2; j++)
         {
-            Cloud d = Instantiate(Cloud, CloudFolder);
+            Cloud d = Instantiate(cloud, parent);
             int randYValueJ = UnityEngine.Random.Range(6, 10);
             int randXIndentJ = UnityEngine.Random.Range(1, 200);
             d.transform.position = new Vector3(d.transform.position.x + j + randXIndentJ, randYValueJ, 0);
             d.transform.localScale = new Vector3(d.transform.localScale.x * 2, d.transform.localScale.y * 2, 0);
+            result.Add(d);
         }
 
         return result;
-
     }
     private LevelBG CreateBGImg(LevelBG levelBG, Transform parent)
     {

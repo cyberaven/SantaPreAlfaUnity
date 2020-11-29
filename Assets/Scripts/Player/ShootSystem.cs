@@ -5,14 +5,13 @@ using System;
 public class ShootSystem : MonoBehaviour
 {
     private VariableJoystick ShootingJoystick;
+    private GameObject Owner;
 
     [SerializeField] private Bullet Bullet;
     private float ShootCooldown = 1;
     private float ShootTime = 0;
 
-    private IPlayer Player;
-
-    public delegate void PlayerShotedDel(IPlayer player);
+    public delegate void PlayerShotedDel(GameObject owner);
     public static event PlayerShotedDel PlayerShotedEve;
 
     private void FixedUpdate()
@@ -21,10 +20,10 @@ public class ShootSystem : MonoBehaviour
         Shoot();
     }
    
-    public void SetPlayer(IPlayer player)
+    public void Init(GameObject owner, VariableJoystick variableJoystick)
     {
-        Player = player;
-        ShootingJoystick = player.GetShootingJoystick();
+        Owner = owner;
+        ShootingJoystick = variableJoystick;
     }
 
     private void ShootTimer()
@@ -43,8 +42,9 @@ public class ShootSystem : MonoBehaviour
             if (ShootTime <= 0)
             {
                 Bullet b = Instantiate(Bullet);
-                b.MoveAway(transform.position, direction);
-                PlayerShotedEve?.Invoke(Player);
+                PlayerModel playerModel = Owner.GetComponent<PlayerModel>();
+                b.MoveAway(playerModel.GetPlayerView().transform.position, direction);
+                PlayerShotedEve?.Invoke(Owner);
                 ShootTime = ShootCooldown;
             }
         }

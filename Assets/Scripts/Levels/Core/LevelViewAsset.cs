@@ -3,15 +3,6 @@ using UnityEngine;
 
 public class LevelViewAsset : MonoBehaviour
 {
-    [SerializeField] private Transform CloudFolder;
-    [SerializeField] private Transform BGHouseFolder;
-    [SerializeField] private Transform SkyBackFolder;
-    [SerializeField] private Transform HouseFolder;
-    [SerializeField] private Transform LamppostFolder;
-    [SerializeField] private Transform VirusFolder;
-    
-    [Space]
-
     [SerializeField] private ELvlAssetName AssetName = ELvlAssetName.NONE;
     public ELvlAssetName GetAssetName()
     {

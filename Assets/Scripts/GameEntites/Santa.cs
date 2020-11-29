@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using Spine.Unity;
 
-public class Santa : PlrView
+public class Santa : PlayerView
 {
     private void OnEnable()
     {
@@ -23,9 +23,9 @@ public class Santa : PlrView
         PlayIdle();
         PlayIdle1();
     }  
-    private void PlayerShoted(IPlayer player)
+    private void PlayerShoted(GameObject go)
     {
-        if (player.GetGameObject() == gameObject)
+        if (go == gameObject)
         {
             PlayShoot();
         }

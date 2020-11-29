@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2061569810367433400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061569810367433406}
+  - component: {fileID: 2061569810367433401}
+  m_Layer: 0
+  m_Name: SantaLevelViewAsset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061569810367433406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061569810367433400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061569810367433401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061569810367433400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c9cd81c1b65054db686036a6ce07a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssetName: 1
+  LevelBG: {fileID: 4780057524032530897, guid: 696834e50c94f9840bc3d6ba8a2cfc90, type: 3}
+  Cloud: {fileID: 6625897118606632554, guid: 4b7dd86026445054a90fc39c4c6f9c1c, type: 3}
+  BGHouse1: {fileID: 6888045150147609394, guid: fd691d79d157f3a4aa845714e70fc12a,
+    type: 3}
+  BGHouse2: {fileID: 5076831953234153792, guid: 2b81d8af4edd4134cb7fa0e0257a9ae1,
+    type: 3}
+  SkyBack1: {fileID: 776662515972756027, guid: cd41c77ce6eb8954688195faead39e18, type: 3}
+  SkyBack2: {fileID: 776662515972756027, guid: 0e3fdfaefd3853a43b75364b6a8eeabe, type: 3}
+  House: {fileID: 8336267184917912300, guid: 4dd40e554ba9a104b961f791a3614545, type: 3}
+  Lamppost: {fileID: 4652800124827006684, guid: 440f70c82208a794aa521c7cf2e30b98,
+    type: 3}
+  Virus: {fileID: 8960976940680078481, guid: b2d9473f5c2034c47bdb289980a54226, type: 3}

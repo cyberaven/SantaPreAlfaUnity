@@ -43,7 +43,6 @@ public class PlayerCreator : MonoBehaviour
                 return playerViewAsset;
             }
         }
-
         throw new Exception("No PlayerViewAsset with name: " + name);
     }
 }

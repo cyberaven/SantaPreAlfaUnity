@@ -11,10 +11,8 @@ public class Level : MonoBehaviour
 
     [SerializeField] private Transform PlayerStartPosition;   
 
-    private PlayerModel Player;
+    private PlayerModel Player;    
 
-    private float MaxLeghtLevel = 10;    
-    
     private void Start()    
     {
         WallRightChangePos();                
@@ -32,15 +30,6 @@ public class Level : MonoBehaviour
     {
         Player = player;
     }
-    public ELvlAssetName GetELvlAssetName()
-    {
-        return LevelViewAsset.GetAssetName();
-    }
-    public void SetViewAsset(LevelViewAsset levelViewAsset)
-    {
-        LevelViewAsset = levelViewAsset;
-    }
-
     private void WallRightChangePos()
     {
         Vector3 wallPos = WallRightPos.position;

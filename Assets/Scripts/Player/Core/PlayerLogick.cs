@@ -1,38 +1,33 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 
-public class Player : MonoBehaviour, IPlayer
+public class PlayerLogick : MonoBehaviour
 {
+    private PlayerModel PlayerModel;
+
     private VariableJoystick MoveJoystick;
     private VariableJoystick ShootJoystick;
 
     [SerializeField] private ShootSystem ShootSystem;
     [SerializeField] private MovingSystem MovingSystem;
-    
-    private Rigidbody2D Rigidbody2D;    
 
     private void Awake()
     {        
-        Rigidbody2D = GetComponent<Rigidbody2D>();
-
-        MovingSystem = Instantiate(MovingSystem, transform);        
-        ShootSystem = Instantiate(ShootSystem, transform);        
+        MovingSystem = Instantiate(MovingSystem, transform);
+        ShootSystem = Instantiate(ShootSystem, transform);
     }
-   
+
     public void SetControllers(VariableJoystick moveJoystick, VariableJoystick shootJoystick)
     {
         MoveJoystick = moveJoystick;
-        MovingSystem.SetPlayer(this);
+        MovingSystem.Init(PlayerModel.GetPlayerView().GetComponent<Rigidbody2D>(), MoveJoystick);
 
         ShootJoystick = shootJoystick;
-        ShootSystem.SetPlayer(this);
+        ShootSystem.Init(PlayerModel.gameObject, ShootJoystick);
     }
+
     
-    public Rigidbody2D GetRigidbody2D()
-    {
-       return Rigidbody2D;
-    }
     public VariableJoystick GetShootingJoystick()
     {
         return ShootJoystick;
@@ -40,9 +35,9 @@ public class Player : MonoBehaviour, IPlayer
     public VariableJoystick GetMovingJoystick()
     {
         return MoveJoystick;
-    }
-    public GameObject GetGameObject()
-    {
-        return gameObject;
     }    
+    public void SetPlayerModel(PlayerModel playerModel)
+    {
+        PlayerModel = playerModel;
+    }
 }

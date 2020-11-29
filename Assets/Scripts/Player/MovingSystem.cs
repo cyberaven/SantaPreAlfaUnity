@@ -3,8 +3,7 @@ using System.Collections;
 
 
 public class MovingSystem : MonoBehaviour
-{
-    private IPlayer Player;
+{    
     private Rigidbody2D Rigidbody2D;
     private VariableJoystick MoveJoystick;    
 
@@ -15,16 +14,10 @@ public class MovingSystem : MonoBehaviour
         Move();
     }
 
-    public void SetPlayer(IPlayer player)
+    public void Init(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick)
     {
-        if(player == null)
-        {
-            throw new System.Exception("MovingSystem player is NULL");
-        }
-
-        Player = player;
-        Rigidbody2D = Player.GetRigidbody2D();
-        MoveJoystick = Player.GetMovingJoystick();
+        Rigidbody2D = rigidbody2D;
+        MoveJoystick = variableJoystick;
     }
     private void Move()
     {

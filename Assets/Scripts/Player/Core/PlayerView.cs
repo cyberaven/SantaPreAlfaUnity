@@ -3,7 +3,7 @@ using UnityEngine;
 using Spine.Unity;
 
 
-public class PlrView : MonoBehaviour
+public class PlayerView : MonoBehaviour
 {
     private AnimationPack AnimationPack;
     private SkeletonAnimation SkeletonAnimation;
