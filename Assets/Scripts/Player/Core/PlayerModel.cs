@@ -45,6 +45,7 @@ public class PlayerModel : MonoBehaviour
 
     private void LevelCreated(Level level)
     {
-        MovingSystem.Init(Rigidbody2D, transform.right);        
+        MovingSystem.Init(Rigidbody2D, transform.right);
+        PlayerView.GetComponent<MovingSystem>().Init(PlayerView.GetComponent<Rigidbody2D>(), PlayerView.transform.right);
     }
 }
