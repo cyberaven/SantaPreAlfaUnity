@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {
+    [SerializeField] private MovingSystem MovingSystem;
     [SerializeField] private PlayerView PlayerView;
     [SerializeField] private PlayerLogick PlayerLogick;    
-    [SerializeField] private MovingSystem MovingSystem;
+   
 
     private Rigidbody2D Rigidbody2D;
 
@@ -45,7 +46,6 @@ public class PlayerModel : MonoBehaviour
 
     private void LevelCreated(Level level)
     {
-        MovingSystem.Init(Rigidbody2D, transform.right);
-        PlayerView.GetComponent<MovingSystem>().Init(PlayerView.GetComponent<Rigidbody2D>(), PlayerView.transform.right);
+        MovingSystem.Init(transform, new Vector3(99999f, 0, 0));               
     }
 }

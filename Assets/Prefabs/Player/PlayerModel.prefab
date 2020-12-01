@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70d318375b833240a1f481acb6b230a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerView: {fileID: 7678237435519678429}
-  PlayerLogick: {fileID: 5806250776722760498}
   MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
+  PlayerView: {fileID: 7678237435519678429}
+  PlayerLogick: {fileID: 5806250776722760498}
 --- !u!50 &6698135675879866131
 Rigidbody2D:
   serializedVersion: 4
@@ -58,7 +58,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271669783627510440}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -115,8 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootSystem: {fileID: 4846116721202872320, guid: 7629c7c4ffe5edf4c824c57fc1d19cf8,
-    type: 3}
-  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
 --- !u!1 &5775145194517312810
 GameObject:
@@ -248,7 +246,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5775145194517312810}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -299,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794981e0050ce064681fa231f454f1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
+    type: 3}
 --- !u!114 &604985220914131705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,4 +311,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998d52bfd188ef468ef7b14b82031d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1000

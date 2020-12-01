@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -10,24 +11,27 @@ public class PlayerLogick : MonoBehaviour
     private VariableJoystick ShootJoystick;
 
     [SerializeField] private ShootSystem ShootSystem;
-    [SerializeField] private MovingSystem MovingSystem;
-
+    
     private void Awake()
-    {        
-        MovingSystem = Instantiate(MovingSystem, transform);
+    {   
         ShootSystem = Instantiate(ShootSystem, transform);
     }
 
     public void SetControllers(VariableJoystick moveJoystick, VariableJoystick shootJoystick)
     {
         MoveJoystick = moveJoystick;
-        MovingSystem.Init(PlayerModel.GetPlayerView().GetComponent<Rigidbody2D>(), MoveJoystick);
-
+        MoveSetupPlayerView(PlayerModel.GetPlayerView(), MoveJoystick);        
+     
         ShootJoystick = shootJoystick;
         ShootSystem.Init(PlayerModel.gameObject, ShootJoystick);
     }
 
-    
+    private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
+    {        
+        playerView.GetMovingSystem().Init(playerView.transform, new Vector3(9999f, 0, 0), 0.1f);//магические числа подобранны опытным путем :)
+        playerView.GetMovingSystem().Init(playerView.transform, moveJoystick);
+    }
+
     public VariableJoystick GetShootingJoystick()
     {
         return ShootJoystick;
