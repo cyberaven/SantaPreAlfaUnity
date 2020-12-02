@@ -27,9 +27,9 @@ public class PlayerLogick : MonoBehaviour
     }
 
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
-    {        
-        playerView.GetMovingSystem().Init(playerView.transform, new Vector3(9999f, 0, 0), 0.1f);//магические числа подобранны опытным путем :)
-        playerView.GetMovingSystem().Init(playerView.transform, moveJoystick);
+    {  
+       playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), playerView.transform.right);
+       playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), moveJoystick);
     }
 
     public VariableJoystick GetShootingJoystick()

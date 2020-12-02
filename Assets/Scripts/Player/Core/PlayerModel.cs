@@ -6,8 +6,7 @@ public class PlayerModel : MonoBehaviour
 {
     [SerializeField] private MovingSystem MovingSystem;
     [SerializeField] private PlayerView PlayerView;
-    [SerializeField] private PlayerLogick PlayerLogick;    
-   
+    [SerializeField] private PlayerLogick PlayerLogick;  
 
     private Rigidbody2D Rigidbody2D;
 
@@ -46,6 +45,6 @@ public class PlayerModel : MonoBehaviour
 
     private void LevelCreated(Level level)
     {
-        MovingSystem.Init(transform, new Vector3(99999f, 0, 0));               
+        MovingSystem.Init(Rigidbody2D, transform.right);
     }
 }

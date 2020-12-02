@@ -27,6 +27,6 @@ public class Level : MonoBehaviour
     private void WallRightChangePos()
     {
         Vector3 wallPos = WallRightPos.position;
-        WallRightPos.position = new Vector3(wallPos.x * 10, wallPos.y, wallPos.z);
+        WallRightPos.position = new Vector3(wallPos.x * 100, wallPos.y, wallPos.z);
     }
 }

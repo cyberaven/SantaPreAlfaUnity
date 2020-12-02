@@ -9,24 +9,32 @@ public class MovingSystem : MonoBehaviour
     private VariableJoystick MoveJoystick;
     private Transform Transform;
 
-    private float MoveSpeed = 50f;
-    private float MaxSpeed = 50f;
+    private float MoveSpeed = 100f;
+    private float MaxSpeed = 200f;
 
     private void FixedUpdate()
     {
         Move();
-       // CheckMaxSpeed();
+        CheckMaxSpeed();
     }    
 
-    public void Init(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick)
+    public void Init(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick, float moveSpeed = 0f)
     {
         Rigidbody2D = rigidbody2D;
         MoveJoystick = variableJoystick;
+        if (moveSpeed != 0f)
+        {
+            MoveSpeed = moveSpeed;
+        }
     }
-    public void Init(Rigidbody2D rigidbody2D, Vector3 direction)
+    public void Init(Rigidbody2D rigidbody2D, Vector3 direction, float moveSpeed = 0f)
     {
         Rigidbody2D = rigidbody2D;
-        Direction = direction;        
+        Direction = direction;
+        if (moveSpeed != 0f)
+        {
+            MoveSpeed = moveSpeed;
+        }
     }
     public void Init(Transform transform, VariableJoystick variableJoystick, float moveSpeed = 0f)
     {
@@ -52,7 +60,16 @@ public class MovingSystem : MonoBehaviour
         if (Rigidbody2D != null && MoveJoystick != null)
         {
             Vector3 direction = GetDirection(MoveJoystick);
-            Rigidbody2D.AddForce(direction * MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);            
+            Rigidbody2D.AddForce(direction * MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            
+            if(direction.x > 0)
+            {
+                MaxSpeed++;
+            }
+            if(direction.x < 0)
+            {
+                MaxSpeed--;
+            }
         }        
         if(Rigidbody2D != null && Direction != null)
         {
@@ -74,9 +91,12 @@ public class MovingSystem : MonoBehaviour
     }
     private void CheckMaxSpeed()
     {
-        if (Rigidbody2D.velocity.sqrMagnitude > MaxSpeed)
+        if (Rigidbody2D != null)
         {
-            Rigidbody2D.velocity *= 0.99f;
+            if (Rigidbody2D.velocity.sqrMagnitude > MaxSpeed)
+            {
+                Rigidbody2D.velocity *= 0.99f;
+            }
         }
     }
     private Vector3 GetDirection(VariableJoystick moveJoystick)

@@ -6,12 +6,14 @@ using Spine.Unity;
 public class PlayerView : MonoBehaviour
 {
     [SerializeField] private MovingSystem MovingSystem;
+    private Rigidbody2D Rigidbody2D;
 
     private AnimationPack AnimationPack;
     private SkeletonAnimation SkeletonAnimation;
 
     private void Awake()
     {
+        Rigidbody2D = GetComponent<Rigidbody2D>();
         MovingSystem = Instantiate(MovingSystem, transform);
 
         SkeletonAnimation = GetComponent<SkeletonAnimation>();
@@ -51,6 +53,10 @@ public class PlayerView : MonoBehaviour
     public MovingSystem GetMovingSystem()
     {
         return MovingSystem;
+    }
+    public Rigidbody2D GetRigidbody2D()
+    {
+        return Rigidbody2D;
     }
 
 }
