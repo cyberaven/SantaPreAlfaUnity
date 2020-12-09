@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
-{
+{   
     [SerializeField] private MovingSystem MovingSystem;
     [SerializeField] private PlayerView PlayerView;
+    [SerializeField] private Transform PlayerViewStartPosition;
     [SerializeField] private PlayerLogick PlayerLogick;  
 
     private Rigidbody2D Rigidbody2D;
@@ -16,6 +18,7 @@ public class PlayerModel : MonoBehaviour
         MovingSystem = Instantiate(MovingSystem, transform);
 
         PlayerLogick.SetPlayerModel(this);
+        SetViewOnStartPosition();
     }
     private void OnEnable()
     {
@@ -25,7 +28,13 @@ public class PlayerModel : MonoBehaviour
     {
         LevelCreator.LevelCreatedEve += LevelCreated;
     }
-
+  
+    public void ChangeMoveSpeed(float delta)
+    {
+        float currentSpeed = MovingSystem.TrDirectionMoveSpeed;
+        float newSpeed = currentSpeed + delta;
+        MovingSystem.Init(transform, new Vector3(999999, 0, 0), newSpeed);
+    }
     public void SetViewAsset(PlayerViewAsset playerViewAsset)
     {
         PlayerView.SetAnimationPack(playerViewAsset.GetAnimationPack());
@@ -42,9 +51,18 @@ public class PlayerModel : MonoBehaviour
     {
         return PlayerLogick;
     }
+    public Transform GetViewStartPosition()
+    {
+        return PlayerViewStartPosition;
+    }
+
 
     private void LevelCreated(Level level)
     {
-        MovingSystem.Init(Rigidbody2D, transform.right);
+        MovingSystem.Init(transform, new Vector3(999999f,0,0), 10f);
+    }
+    private void SetViewOnStartPosition()
+    {
+        PlayerView.transform.localPosition = PlayerViewStartPosition.position;
     }
 }

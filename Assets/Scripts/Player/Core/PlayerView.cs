@@ -22,7 +22,7 @@ public class PlayerView : MonoBehaviour
             throw new System.Exception("No SkeletonAnimation on gameObject: " + gameObject);
         }
     }
-
+    
     public void SetAnimationPack(AnimationPack animationPack)
     {
         AnimationPack = animationPack;
@@ -57,6 +57,10 @@ public class PlayerView : MonoBehaviour
     public Rigidbody2D GetRigidbody2D()
     {
         return Rigidbody2D;
+    }
+    public Vector3 GetLocalPosition()
+    {
+        return transform.localPosition;
     }
 
 }
