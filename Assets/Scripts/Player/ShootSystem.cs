@@ -2,22 +2,32 @@
 using System.Collections;
 using System;
 
+public enum EProjectileType
+{ 
+    Bullet,
+    Bomb
+}
+
+
 public class ShootSystem : MonoBehaviour
 {
     private VariableJoystick ShootingJoystick;
     private GameObject Owner;
 
     [SerializeField] private Bullet Bullet;
-    private float ShootCooldown = 1;
-    private float ShootTime = 0;
+    private float ShootBulletCooldown = 1;
+    private float ShootBulletTime = 0;
+
+    [SerializeField] private Bomb Bomb;
+    private float ShootBombCooldown = 1;
+    private float ShootBombTime = 0;
 
     public delegate void PlayerShotedDel(GameObject owner);
     public static event PlayerShotedDel PlayerShotedEve;
 
-    private void FixedUpdate()
+    private void Update()
     {   
-        ShootTimer();
-        Shoot();
+        ShootTimer();        
     }
    
     public void Init(GameObject owner, VariableJoystick variableJoystick)
@@ -28,25 +38,47 @@ public class ShootSystem : MonoBehaviour
 
     private void ShootTimer()
     {
-        if (ShootTime > 0)
+        if (ShootBulletTime > 0)
         {
-            ShootTime -= Time.deltaTime;
+            ShootBulletTime -= Time.deltaTime;
+        }
+        if (ShootBombTime > 0)
+        {
+            ShootBombTime -= Time.deltaTime;
         }
     }
-    private void Shoot()
+    public void Shoot(EProjectileType projectileType, Vector3 direction)
     {
-        if (ShootingJoystick.Vertical > 0.2f || ShootingJoystick.Vertical < -0.2f || ShootingJoystick.Horizontal > 0.2f || ShootingJoystick.Horizontal < -0.2f)
+        if(projectileType == EProjectileType.Bullet)
         {
-            Vector3 direction = Vector3.up * ShootingJoystick.Vertical + Vector3.right * ShootingJoystick.Horizontal;
+            ShootBullet(direction);
+        }
+        if (projectileType == EProjectileType.Bomb)
+        {
+            ShootBomb(direction);
+        }
 
-            if (ShootTime <= 0)
-            {
-                Bullet b = Instantiate(Bullet);
-                PlayerModel playerModel = Owner.GetComponent<PlayerModel>();
-                b.MoveAway(playerModel.GetPlayerView().transform.position, direction);
-                PlayerShotedEve?.Invoke(Owner);
-                ShootTime = ShootCooldown;
-            }
+    }
+    private void ShootBullet(Vector3 direction)
+    {        
+        if (ShootBulletTime <= 0)
+        {
+            Bullet b = Instantiate(Bullet);
+            PlayerModel playerModel = Owner.GetComponent<PlayerModel>();
+            b.MoveAway(playerModel.GetPlayerView().transform.position, direction);
+            PlayerShotedEve?.Invoke(Owner);
+            ShootBulletTime = ShootBulletCooldown;
+        }        
+    }
+    private void ShootBomb(Vector3 direction)
+    {   
+        if(ShootBombTime <= 0)
+        {
+            Bomb b = Instantiate(Bomb);
+            PlayerModel playerModel = Owner.GetComponent<PlayerModel>();
+            b.MoveAway(playerModel.GetPlayerView().transform.position, direction);
+            PlayerShotedEve?.Invoke(Owner);
+            ShootBombTime = ShootBombCooldown;
         }
     }
 }

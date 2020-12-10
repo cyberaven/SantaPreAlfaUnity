@@ -75,6 +75,9 @@ TagManager:
   - name: Bullet
     uniqueID: 3249794305
     locked: 0
+  - name: Bomb
+    uniqueID: 129349967
+    locked: 0
   - name: Santa
     uniqueID: 3059432103
     locked: 0

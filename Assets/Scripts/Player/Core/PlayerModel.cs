@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerModel : MonoBehaviour
 {   
     [SerializeField] private MovingSystem MovingSystem;
+    [SerializeField] private float MaxMovingSpeed = 20f;
+    [SerializeField] private float MinMovingSpeed = 10f;
+
     [SerializeField] private PlayerView PlayerView;
     [SerializeField] private Transform PlayerViewStartPosition;
     [SerializeField] private PlayerLogick PlayerLogick;  
@@ -33,7 +36,10 @@ public class PlayerModel : MonoBehaviour
     {
         float currentSpeed = MovingSystem.TrDirectionMoveSpeed;
         float newSpeed = currentSpeed + delta;
-        MovingSystem.Init(transform, new Vector3(999999, 0, 0), newSpeed);
+        if (newSpeed < MaxMovingSpeed && newSpeed > MinMovingSpeed)
+        {
+            MovingSystem.Init(transform, new Vector3(999999, 0, 0), newSpeed);
+        }
     }
     public void SetViewAsset(PlayerViewAsset playerViewAsset)
     {

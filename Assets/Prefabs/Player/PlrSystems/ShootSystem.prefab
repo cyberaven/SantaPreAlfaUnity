@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2917879825729453264, guid: ccfa0e405a87caf429b416761b255d2b, type: 3}
+  Bomb: {fileID: 5692961491268022952, guid: 40c9235153ed2be4bae152a19033845f, type: 3}

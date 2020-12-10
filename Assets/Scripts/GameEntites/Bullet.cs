@@ -5,25 +5,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private MovingSystem MovingSystem;
     private Rigidbody2D Rigidbody2D;
-    private float MoveSpeed = 1000f;
-    
-    private Vector3 MoveDirection = Vector3.zero;
-    private Vector3 StartPosition = Vector3.zero;
-
+    private float MoveSpeed = 300f;
+   
     private void Awake()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        MovingSystem = Instantiate(MovingSystem, transform);        
     }
     
     public void MoveAway(Vector3 startPosition, Vector3 direction)
     {
-        StartPosition = startPosition;
-        MoveDirection = direction;
-
-        transform.position = StartPosition;
-        Rigidbody2D.AddForce(MoveDirection * MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        transform.position = startPosition;
+        MovingSystem.Init(Rigidbody2D, direction, MoveSpeed);       
     }
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "House")
@@ -38,7 +35,6 @@ public class Bullet : MonoBehaviour
         {
             Die();
         }
-
     }
 
     private void LampCollision(Collider2D collision)
@@ -55,5 +51,10 @@ public class Bullet : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    public MovingSystem GetMovingSystem()
+    {
+        return MovingSystem;
     }
 }

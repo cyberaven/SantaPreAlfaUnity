@@ -61,11 +61,11 @@ public class MovingSystem : MonoBehaviour
         if (Rigidbody2D != null && MoveJoystick != null)
         {
             Vector3 direction = GetDirection(MoveJoystick);
-            Rigidbody2D.AddForce(direction * RbJoystickMoveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            Rigidbody2D.AddForce(direction * RbJoystickMoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }        
         if(Rigidbody2D != null && Direction != null)
         {
-            Rigidbody2D.AddForce(Direction * RbDirectionMoveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            Rigidbody2D.AddForce(Direction * RbDirectionMoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
 
         if (Transform != null && MoveJoystick != null)
