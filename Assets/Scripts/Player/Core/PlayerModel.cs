@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {   
-    [SerializeField] private MovingSystem MovingSystem;
+    [Header("Конфиг Модели")]
     [SerializeField] private float MaxMovingSpeed = 20f;
     [SerializeField] private float MinMovingSpeed = 10f;
-
+    public string CurrentSpeed = "";
+    [Space]
+    [Header("Компоненты Модели")]
+    [SerializeField] private MovingSystem MovingSystem;
     [SerializeField] private PlayerView PlayerView;
     [SerializeField] private Transform PlayerViewStartPosition;
-    [SerializeField] private PlayerLogick PlayerLogick;  
-
+    [SerializeField] private PlayerLogick PlayerLogick;
+    [Space]
     private Rigidbody2D Rigidbody2D;
 
     private void Awake()
@@ -31,7 +34,11 @@ public class PlayerModel : MonoBehaviour
     {
         LevelCreator.LevelCreatedEve += LevelCreated;
     }
-  
+    private void Update()
+    {
+        CurrentSpeed = PlayerView.GetMovingSystem().CurentSpeed;
+    }
+
     public void ChangeMoveSpeed(float delta)
     {
         float currentSpeed = MovingSystem.TrDirectionMoveSpeed;

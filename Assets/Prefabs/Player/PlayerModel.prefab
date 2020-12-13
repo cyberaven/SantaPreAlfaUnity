@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootSystem: {fileID: 4846116721202872320, guid: 7629c7c4ffe5edf4c824c57fc1d19cf8,
     type: 3}
+  ShootJoystickActionLimiter: 0.2
 --- !u!1 &5775145194517312810
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1235535193
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
 --- !u!114 &254599346514458096
 MonoBehaviour:

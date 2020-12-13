@@ -21,16 +21,21 @@ public class MovingSystem : MonoBehaviour
     private float trJoystickMoveSpeed = 10f;
     public float TrJoystickMoveSpeed { get => trJoystickMoveSpeed; }
 
+    [SerializeField] private string curentSpeed = "::NULLCurntSpeed::";
+    public string CurentSpeed { get => curentSpeed; set => curentSpeed = value; }
+
+
     private float MaxSpeed = 20f;
 
     
 
     private void FixedUpdate()
-    {
+    {        
         Move();
-        CheckMaxSpeed();
-    }    
+        CheckMaxSpeed();        
+    }
 
+    
     public void Init(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick, float moveSpeed = 10f)
     {
         Rigidbody2D = rigidbody2D;
@@ -75,13 +80,14 @@ public class MovingSystem : MonoBehaviour
         }
         if (Transform != null && Direction != null)
         {            
-            Transform.position = Vector3.MoveTowards(transform.position, Direction, Time.fixedDeltaTime * TrDirectionMoveSpeed);
+            Transform.position = Vector3.MoveTowards(transform.position, Direction, Time.fixedDeltaTime * TrDirectionMoveSpeed);            
         }
     }
     private void CheckMaxSpeed()
     {
         if (Rigidbody2D != null)
-        {
+        {             
+            curentSpeed = Rigidbody2D.velocity.sqrMagnitude.ToString();
             if (Rigidbody2D.velocity.sqrMagnitude > MaxSpeed)
             {
                 Rigidbody2D.velocity *= 0.99f;
