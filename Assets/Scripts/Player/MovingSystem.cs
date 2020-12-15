@@ -25,7 +25,8 @@ public class MovingSystem : MonoBehaviour
     public string CurentSpeed { get => curentSpeed; set => curentSpeed = value; }
 
 
-    private float MaxSpeed = 20f;
+    private float RbMaxSpeed = 20f;
+    private float TrMaxSpeed = 20f;
 
     
 
@@ -88,7 +89,7 @@ public class MovingSystem : MonoBehaviour
         if (Rigidbody2D != null)
         {             
             curentSpeed = Rigidbody2D.velocity.sqrMagnitude.ToString();
-            if (Rigidbody2D.velocity.sqrMagnitude > MaxSpeed)
+            if (Rigidbody2D.velocity.sqrMagnitude > RbMaxSpeed)
             {
                 Rigidbody2D.velocity *= 0.99f;
             }
@@ -96,6 +97,10 @@ public class MovingSystem : MonoBehaviour
         else
         {
             //тут ограничитель скорости для transform
+            if (transform.position.x > TrMaxSpeed || transform.position.x < -TrMaxSpeed)
+            {
+                transform.position += -Vector3.right;//тут косяк
+            }            
         }
     }
     private Vector3 GetDirection(VariableJoystick moveJoystick)

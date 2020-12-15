@@ -36,7 +36,7 @@ public class PlayerModel : MonoBehaviour
     }
     private void Update()
     {
-        CurrentSpeed = PlayerView.GetMovingSystem().CurentSpeed;
+        CurrentSpeed = MovingSystem.CurentSpeed;
     }
 
     public void ChangeMoveSpeed(float delta)
