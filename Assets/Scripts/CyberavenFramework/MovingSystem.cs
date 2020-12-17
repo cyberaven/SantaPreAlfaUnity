@@ -9,24 +9,25 @@ public class MovingSystem : MonoBehaviour
     private VariableJoystick MoveJoystick;
     private Transform Transform;
 
-    private float rbDirectionMoveSpeed = 10f;
+    [SerializeField] private float rbDirectionMoveSpeed = 10f;
     public float RbDirectionMoveSpeed { get => rbDirectionMoveSpeed;}
 
-    private float rbJoystickMoveSpeed = 10f;
+    [SerializeField] private float rbJoystickMoveSpeed = 10f;
     public float RbJoystickMoveSpeed { get => rbJoystickMoveSpeed; }
 
-    private float trDirectionMoveSpeed = 10f;
+    [SerializeField] private float trDirectionMoveSpeed = 10f;
     public float TrDirectionMoveSpeed { get => trDirectionMoveSpeed; }
 
-    private float trJoystickMoveSpeed = 10f;
+    [SerializeField] private float trJoystickMoveSpeed = 10f;
     public float TrJoystickMoveSpeed { get => trJoystickMoveSpeed; }
 
-    [SerializeField] private string curentSpeed = "::NULLCurntSpeed::";
-    public string CurentSpeed { get => curentSpeed; set => curentSpeed = value; }
+    [SerializeField] private float curentSpeed = 0f;
+    public float CurentSpeed { get => curentSpeed; set => curentSpeed = value; }
 
 
-    private float RbMaxSpeed = 20f;
-    private float TrMaxSpeed = 20f;
+    [SerializeField] private float RbMaxSpeed = 20f;
+    [SerializeField] private float RbMinSpeed = 10f;
+    [SerializeField] private float TrMaxSpeed = 20f;
 
     
 
@@ -87,20 +88,24 @@ public class MovingSystem : MonoBehaviour
     private void CheckMaxSpeed()
     {
         if (Rigidbody2D != null)
-        {             
-            curentSpeed = Rigidbody2D.velocity.sqrMagnitude.ToString();
-            if (Rigidbody2D.velocity.sqrMagnitude > RbMaxSpeed)
+        {            
+            curentSpeed = Mathf.Sqrt(Rigidbody2D.velocity.sqrMagnitude);
+            if (Rigidbody2D.velocity.sqrMagnitude > RbMaxSpeed * RbMaxSpeed)
+            {               
+                Rigidbody2D.velocity *= 0.9f;
+            }
+            if (Rigidbody2D.velocity.sqrMagnitude < RbMaxSpeed * RbMaxSpeed)
             {
-                Rigidbody2D.velocity *= 0.99f;
+                Rigidbody2D.velocity *= 1.01f;
             }
         }
         else
         {
             //тут ограничитель скорости для transform
-            if (transform.position.x > TrMaxSpeed || transform.position.x < -TrMaxSpeed)
-            {
-                transform.position += -Vector3.right;//тут косяк
-            }            
+           // if (transform.position.x > TrMaxSpeed || transform.position.x < -TrMaxSpeed)
+            //{
+             //   transform.position += -Vector3.right;//тут косяк
+           // }            
         }
     }
     private Vector3 GetDirection(VariableJoystick moveJoystick)

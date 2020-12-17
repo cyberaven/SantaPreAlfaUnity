@@ -17,18 +17,20 @@ public class PlayerLogick : MonoBehaviour
     private void OnEnable()
     {
         DropBombButton.DropBombButtonClkEve += DropBombButtonClk;
+        LevelCreator.LevelCreatedEve += LevelCreated;
     }
     private void OnDisable()
     {
         DropBombButton.DropBombButtonClkEve -= DropBombButtonClk;
-    }
+        LevelCreator.LevelCreatedEve -= LevelCreated;
+    }    
+
     private void Awake()
     {   
         ShootSystem = Instantiate(ShootSystem, transform);
     }
     private void Update()
-    {
-        PlayerModelChangeMoveSpeed();
+    {        
         CheckShootJoystick();
     }
     #endregion
@@ -45,26 +47,7 @@ public class PlayerLogick : MonoBehaviour
     {
         ShootSystem.Shoot(EProjectileType.Bomb, -PlayerModel.transform.up);
     }
-
-    private void PlayerModelChangeMoveSpeed()
-    {
-        Vector3 viewCurrentPos = PlayerModel.GetPlayerView().GetLocalPosition();
-        Vector3 startPos = PlayerModel.GetViewStartPosition().localPosition;
-        float distance = 0;
-
-        if (viewCurrentPos.x > startPos.x)
-        {           
-            distance = (startPos.x * -1) - (viewCurrentPos.x * -1);            
-        }
-        if (viewCurrentPos.x < startPos.x)
-        {
-            distance = (viewCurrentPos.x * -1) - (startPos.x * -1);
-            distance *= -1f;
-        }
-        
-        PlayerModel.ChangeMoveSpeed(distance * 0.01f);
-    }
-
+    
     public void SetControllers(VariableJoystick moveJoystick, VariableJoystick shootJoystick)
     {
         MoveJoystick = moveJoystick;
@@ -75,8 +58,13 @@ public class PlayerLogick : MonoBehaviour
     }
 
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
-    { 
-       playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), moveJoystick, 150f);
+    {         
+       playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), moveJoystick, 100f);
+    }
+    private void LevelCreated(Level level)
+    {
+        PlayerView playerView = PlayerModel.GetPlayerView();
+        playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), Vector3.right, 100f);
     }
 
     public VariableJoystick GetShootingJoystick()

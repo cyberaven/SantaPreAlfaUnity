@@ -5,52 +5,27 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    private FollowToObjSystem FollowToObjSystem;
-    private PlayerModel Player;
-    private bool CheckPlrPosEnable = false;
+    [SerializeField] private MovingSystem MovingSystem;
+  
+    private Rigidbody2D Rigidbody2D;
 
     private void Awake()
     {
-        FollowToObjSystem = GetComponent<FollowToObjSystem>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+        MovingSystem = Instantiate(MovingSystem, transform);        
     }
-    private void Update()
-    {
-        CheckPlrPos();
-    }
+   
     private void OnEnable()
     {
-        LevelCreator.LevelCreatedEve += LevelCreated;
-        PlayerCreator.PlayerCreatedEve += PlayerCreated;        
+        LevelCreator.LevelCreatedEve += LevelCreated;             
     }
     private void OnDisable()
     {
-        LevelCreator.LevelCreatedEve -= LevelCreated;
-        PlayerCreator.PlayerCreatedEve -= PlayerCreated;
+        LevelCreator.LevelCreatedEve -= LevelCreated;       
     }
-
-    private void PlayerCreated(PlayerModel player)
-    {
-        Player = player;
-    }
+   
     private void LevelCreated(Level level)
-    {        
-        FollowToObjSystem.FollowOn(Player.transform, true, false, false);
-    }
-
-    private void StartLevelTriggerVisible()
     {
-        FollowToObjSystem.FollowOff();
-        CheckPlrPosEnable = true;        
-    }
-    private void CheckPlrPos()
-    {
-        if (CheckPlrPosEnable == true)
-        {
-            if (Player.transform.position.x > 2)
-            {
-                FollowToObjSystem.FollowOn(Player.transform, true, false, false);
-                CheckPlrPosEnable = false;
-            }
-        }
-    }
+        MovingSystem.Init(Rigidbody2D, Vector3.right);       
+    }   
 }
