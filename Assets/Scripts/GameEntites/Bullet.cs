@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     public void MoveAway(Vector3 startPosition, Vector3 direction)
     {
         transform.position = startPosition;
-        MovingSystem.Init(Rigidbody2D, direction, MoveSpeed);       
+        MovingSystem.DirectionMoveOn(Rigidbody2D, direction);               
     }
    
     private void OnTriggerEnter2D(Collider2D collision)

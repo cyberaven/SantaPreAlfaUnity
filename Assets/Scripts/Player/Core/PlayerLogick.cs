@@ -59,12 +59,12 @@ public class PlayerLogick : MonoBehaviour
 
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
     {         
-       playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), moveJoystick, 100f);
+       playerView.GetMovingSystem().ControllMoveOn(playerView.GetRigidbody2D(), moveJoystick, 20f);
     }
     private void LevelCreated(Level level)
     {
         PlayerView playerView = PlayerModel.GetPlayerView();
-        playerView.GetMovingSystem().Init(playerView.GetRigidbody2D(), Vector3.right, 100f);
+        playerView.GetMovingSystem().DirectionMoveOn(playerView.GetRigidbody2D(), Vector3.right, 20f, 19.9f);
     }
 
     public VariableJoystick GetShootingJoystick()

@@ -26,6 +26,6 @@ public class MainCamera : MonoBehaviour
    
     private void LevelCreated(Level level)
     {
-        MovingSystem.Init(Rigidbody2D, Vector3.right);       
+        MovingSystem.DirectionMoveOn(Rigidbody2D, Vector3.right);        
     }   
 }
