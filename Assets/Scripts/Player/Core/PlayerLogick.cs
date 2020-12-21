@@ -16,13 +16,11 @@ public class PlayerLogick : MonoBehaviour
     #region Unity Method
     private void OnEnable()
     {
-        DropBombButton.DropBombButtonClkEve += DropBombButtonClk;
-        LevelCreator.LevelCreatedEve += LevelCreated;
+        DropBombButton.DropBombButtonClkEve += DropBombButtonClk;       
     }
     private void OnDisable()
     {
-        DropBombButton.DropBombButtonClkEve -= DropBombButtonClk;
-        LevelCreator.LevelCreatedEve -= LevelCreated;
+        DropBombButton.DropBombButtonClkEve -= DropBombButtonClk;       
     }    
 
     private void Awake()
@@ -60,12 +58,7 @@ public class PlayerLogick : MonoBehaviour
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
     {         
        playerView.GetMovingSystem().ControllMoveOn(playerView.GetRigidbody2D(), moveJoystick, 20f);
-    }
-    private void LevelCreated(Level level)
-    {
-        PlayerView playerView = PlayerModel.GetPlayerView();
-        playerView.GetMovingSystem().DirectionMoveOn(playerView.GetRigidbody2D(), Vector3.right, 20f, 19.9f);
-    }
+    }   
 
     public VariableJoystick GetShootingJoystick()
     {

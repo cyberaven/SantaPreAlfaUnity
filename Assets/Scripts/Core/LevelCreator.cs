@@ -65,10 +65,6 @@ public class LevelCreator : MonoBehaviour
         throw new Exception("No LevelViewAsset with name: " + name);
     }
 
-
-
-    
-
     private List<Virus> CreateVirus(Virus virus, Transform parent)
     {
         List<Virus> result = new List<Virus>();

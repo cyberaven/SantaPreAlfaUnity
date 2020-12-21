@@ -427,6 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5448042243834419651}
   - component: {fileID: 4043464230688628535}
+  - component: {fileID: 562462710450086382}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -465,7 +466,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelEnvironment: {fileID: 6799990904788004967}
   WallRightPos: {fileID: 6353087590806189131}
-  PlayerStartPosition: {fileID: 127987196817976472}
+  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
+    type: 3}
+--- !u!50 &562462710450086382
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981181410540414282}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7663059825371550984
 GameObject:
   m_ObjectHideFlags: 0

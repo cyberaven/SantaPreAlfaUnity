@@ -41,8 +41,17 @@ public class MovingSystem : MonoBehaviour
     private void ControllMove()
     {
         if(ControllMoveEnable == true)
-        {            
-            ControllMoveData.Rigidbody2D.AddForce(ControllMoveData.GetDirection() * ControllMoveData.MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        {
+            Vector3 direction = ControllMoveData.GetDirection();
+            
+            if(direction == Vector3.zero)
+            {
+                ControllMoveData.Stop();
+            }
+            else
+            {
+                ControllMoveData.Rigidbody2D.AddForce(direction * ControllMoveData.MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            }
         }
     }
 
@@ -101,64 +110,4 @@ public class MovingSystem : MonoBehaviour
             DirectionMoveData.CheckMinSpeed();
         }
     }   
-}
-
-public class ControllMoveData : MoveData
-{
-    public ControllMoveData(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick, float moveSpeed = 10f, float maxSpeed = 20f, float minSpeed = 10f)
-        : base(rigidbody2D, moveSpeed, maxSpeed, minSpeed)
-    {            
-        VariableJoystick = variableJoystick;       
-    }    
-    public VariableJoystick VariableJoystick { get; }
-    public Vector3 GetDirection()
-    {
-        Vector3 direction = Vector3.up * VariableJoystick.Vertical + Vector3.right * VariableJoystick.Horizontal;
-        return direction;
-    }
-}
-public class DirectionMoveData : MoveData
-{
-    public DirectionMoveData(Rigidbody2D rigidbody2D, Vector3 direction, float moveSpeed = 10f, float maxSpeed = 20f, float minSpeed = 10f)
-        : base(rigidbody2D, moveSpeed, maxSpeed, minSpeed)
-    {
-        Direction = direction;
-    }
-    public Vector3 Direction { get; }
-}
-
-public class MoveData
-{
-    public MoveData(Rigidbody2D rigidbody2D, float moveSpeed = 10f, float maxSpeed = 20f, float minSpeed = 10f)
-    {
-        Rigidbody2D = rigidbody2D;        
-        MoveSpeed = moveSpeed;
-        MaxSpeed = maxSpeed;
-        MinSpeed = minSpeed;
-    }
-    public Rigidbody2D Rigidbody2D { get; }   
-    public float MoveSpeed { get; }
-    public float MaxSpeed { get; }
-    public float MinSpeed { get; }
-    public float CurrentSpeed
-    {
-        get
-        {
-            return Rigidbody2D.velocity.sqrMagnitude;
-        }
-    }
-    public void CheckMaxSpeed()
-    {
-        if(CurrentSpeed > MaxSpeed * MaxSpeed)
-        {
-            Rigidbody2D.velocity *= 0.95f;
-        }
-    }
-    public void CheckMinSpeed()
-    {
-        if(CurrentSpeed < MinSpeed * MinSpeed)
-        {
-            Rigidbody2D.velocity *= 1.05f;
-        }
-    }
 }

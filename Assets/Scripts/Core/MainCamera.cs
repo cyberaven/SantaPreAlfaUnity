@@ -13,19 +13,5 @@ public class MainCamera : MonoBehaviour
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         MovingSystem = Instantiate(MovingSystem, transform);        
-    }
-   
-    private void OnEnable()
-    {
-        LevelCreator.LevelCreatedEve += LevelCreated;             
-    }
-    private void OnDisable()
-    {
-        LevelCreator.LevelCreatedEve -= LevelCreated;       
-    }
-   
-    private void LevelCreated(Level level)
-    {
-        MovingSystem.DirectionMoveOn(Rigidbody2D, Vector3.right);        
-    }   
+    }     
 }

@@ -6,10 +6,27 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {    
     [SerializeField] public LevelEnvironment LevelEnvironment;
+    [SerializeField] private Transform WallRightPos;
+    [SerializeField] private MovingSystem MovingSystem;
 
-    [SerializeField] private Transform WallRightPos;   
+    private Rigidbody2D Rigidbody2D;
 
-    private PlayerModel Player;    
+    private PlayerModel Player;
+
+    private void OnEnable()
+    {
+        Starter.StartGameEve += StartGame;
+    }
+    private void OnDisable()
+    {
+        Starter.StartGameEve -= StartGame;
+    }
+
+    private void Awake()
+    {
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+        MovingSystem = Instantiate(MovingSystem, transform);
+    }
 
     private void Start()    
     {
@@ -28,5 +45,9 @@ public class Level : MonoBehaviour
     {
         Vector3 wallPos = WallRightPos.position;
         WallRightPos.position = new Vector3(wallPos.x * 100, wallPos.y, wallPos.z);
+    }
+    private void StartGame()
+    {
+        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right);
     }
 }
