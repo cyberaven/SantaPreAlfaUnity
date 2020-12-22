@@ -38,12 +38,12 @@ public class PlayerLogick : MonoBehaviour
         if (ShootJoystick.Vertical > ShootJoystickActionLimiter || ShootJoystick.Vertical < -ShootJoystickActionLimiter || ShootJoystick.Horizontal > ShootJoystickActionLimiter || ShootJoystick.Horizontal < -ShootJoystickActionLimiter)
         {
             Vector3 direction = Vector3.up * ShootJoystick.Vertical + Vector3.right * ShootJoystick.Horizontal;
-            ShootSystem.Shoot(EProjectileType.Bullet, direction);
+            ShootSystem.Fire(EProjectileType.Bullet, PlayerModel.gameObject, direction, PlayerModel.GetPlayerView().transform.position);
         }
     }
     private void DropBombButtonClk()
     {
-        ShootSystem.Shoot(EProjectileType.Bomb, -PlayerModel.transform.up);
+        ShootSystem.Fire(EProjectileType.Bomb, PlayerModel.gameObject, - PlayerModel.transform.up, PlayerModel.GetPlayerView().transform.position);
     }
     
     public void SetControllers(VariableJoystick moveJoystick, VariableJoystick shootJoystick)
@@ -51,8 +51,7 @@ public class PlayerLogick : MonoBehaviour
         MoveJoystick = moveJoystick;
         MoveSetupPlayerView(PlayerModel.GetPlayerView(), MoveJoystick);        
      
-        ShootJoystick = shootJoystick;
-        ShootSystem.Init(PlayerModel.gameObject, ShootJoystick);
+        ShootJoystick = shootJoystick;        
     }
 
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)

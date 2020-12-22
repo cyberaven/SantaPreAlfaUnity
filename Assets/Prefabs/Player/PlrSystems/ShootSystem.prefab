@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e547698a8b21b499ccfd06aaff92c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 2917879825729453264, guid: ccfa0e405a87caf429b416761b255d2b, type: 3}
-  Bomb: {fileID: 5692961491268022952, guid: 40c9235153ed2be4bae152a19033845f, type: 3}
+  Bullet: {fileID: 93098818636387265, guid: ccfa0e405a87caf429b416761b255d2b, type: 3}
+  Bomb: {fileID: 1879973930661833209, guid: 40c9235153ed2be4bae152a19033845f, type: 3}

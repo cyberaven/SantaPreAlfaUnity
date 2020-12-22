@@ -10,12 +10,13 @@ public class Santa : PlayerView
     private void OnEnable()
     {
         PlayerCreator.PlayerCreatedEve += PlayerCreated;
-        ShootSystem.PlayerShotedEve += PlayerShoted;
+        ProjectileCanon.PlayerShotedEve += PlayerShoted;
+        
     }
     private void OnDisable()
     {
         PlayerCreator.PlayerCreatedEve -= PlayerCreated;
-        ShootSystem.PlayerShotedEve -= PlayerShoted;
+        ProjectileCanon.PlayerShotedEve -= PlayerShoted;       
     }
    
     private void PlayerCreated(PlayerModel player)

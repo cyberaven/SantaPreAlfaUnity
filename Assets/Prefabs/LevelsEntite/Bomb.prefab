@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3191202718659902568}
-  - component: {fileID: 5692961491268022952}
   - component: {fileID: 7538367913092647770}
   - component: {fileID: -2324946810947036445}
   - component: {fileID: -4347482280278966024}
+  - component: {fileID: 1879973930661833209}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5692961491268022952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120985281301180102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea0d8e8c85fcb74eb5d425fb4ba37e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
-    type: 3}
 --- !u!212 &7538367913092647770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -145,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.57, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &1879973930661833209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120985281301180102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228384092f48c074e89e0e2f8441c439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
+    type: 3}
