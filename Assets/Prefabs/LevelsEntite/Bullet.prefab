@@ -135,3 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
+  Cooldown: 2000
+  LiveTime: 2000
