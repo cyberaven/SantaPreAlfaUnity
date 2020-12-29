@@ -4,22 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
-{    
+{
+    [Header("Level Move")]
+    [SerializeField] private MovingSystem MovingSystem;
+    [SerializeField] private float StartMovingSpeed = 5f;
+    [SerializeField] private float MaxMovingSpeed = 10f;
+    [SerializeField] private float MinMovingSpeed = 1f;
+    [Space]
+    [SerializeField] public float PointWinValue = 0;
     [SerializeField] public LevelEnvironment LevelEnvironment;
     [SerializeField] private Transform WallRightPos;
-    [SerializeField] private MovingSystem MovingSystem;
-
-    private Rigidbody2D Rigidbody2D;
-
-    private PlayerModel Player;
+    
+    private Rigidbody2D Rigidbody2D; 
 
     private void OnEnable()
     {
         Starter.StartGameEve += StartGame;
+        PlayerLogick.PlayerViewChangeXPosEve += PlayerViewChangeXPosEve;
     }
     private void OnDisable()
     {
         Starter.StartGameEve -= StartGame;
+        PlayerLogick.PlayerViewChangeXPosEve -= PlayerViewChangeXPosEve;
     }
 
     private void Awake()
@@ -31,16 +37,11 @@ public class Level : MonoBehaviour
     private void Start()    
     {
         WallRightChangePos();                
-    }    
-    
-    public PlayerModel GetPlayer()
-    {
-        return Player;
-    }
-    public void SetPlayer(PlayerModel player)
-    {
-        Player = player;
-    }
+    }  
+   private void PlayerViewChangeXPosEve(float delta)
+   {//тут косяк кажись.
+        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta, MaxMovingSpeed, MinMovingSpeed);
+   }
     private void WallRightChangePos()
     {
         Vector3 wallPos = WallRightPos.position;
@@ -48,6 +49,6 @@ public class Level : MonoBehaviour
     }
     private void StartGame()
     {
-        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right);
+        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed, MaxMovingSpeed, MinMovingSpeed);
     }
 }

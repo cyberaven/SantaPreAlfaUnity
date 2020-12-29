@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D Rigidbody2D;
 
     private void Awake()
-    {
+    {        
         LiveTimeTimer = new CooldownTimer(LiveTime);
         LiveTimeTimer.Go();
 

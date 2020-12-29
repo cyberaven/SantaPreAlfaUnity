@@ -464,10 +464,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5107250b97de3644cb15631c1bea71a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelEnvironment: {fileID: 6799990904788004967}
-  WallRightPos: {fileID: 6353087590806189131}
   MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
+  StartMovingSpeed: 5
+  MaxMovingSpeed: 10
+  MinMovingSpeed: 1
+  PointWinValue: 20
+  LevelEnvironment: {fileID: 6799990904788004967}
+  WallRightPos: {fileID: 6353087590806189131}
 --- !u!50 &562462710450086382
 Rigidbody2D:
   serializedVersion: 4

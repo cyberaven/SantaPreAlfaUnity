@@ -11,9 +11,9 @@ public class MoveData
         MinSpeed = minSpeed;
     }
     public Rigidbody2D Rigidbody2D { get; }
-    public float MoveSpeed { get; }
-    public float MaxSpeed { get; }
-    public float MinSpeed { get; }
+    public float MoveSpeed { get; private set; }
+    public float MaxSpeed { get; private set; }
+    public float MinSpeed { get; private set; }
     public float CurrentSpeed
     {
         get
@@ -38,5 +38,9 @@ public class MoveData
     public void Stop()
     {
         Rigidbody2D.velocity = Vector2.zero;
+    }
+    public void ChangeMoveSpeed(float newMoveSpeed)
+    {
+        MoveSpeed = newMoveSpeed;
     }
 }

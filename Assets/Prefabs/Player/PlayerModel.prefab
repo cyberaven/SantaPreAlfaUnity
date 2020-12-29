@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootSystem: {fileID: 4846116721202872320, guid: 7629c7c4ffe5edf4c824c57fc1d19cf8,
     type: 3}
-  ShootJoystickActionLimiter: 0.2
+  ShootJoystickActionLimiter: 0.5
 --- !u!1 &4845052955961196965
 GameObject:
   m_ObjectHideFlags: 0

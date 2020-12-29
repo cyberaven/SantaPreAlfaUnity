@@ -9,6 +9,8 @@ public class CooldownTimer
     private float Cooldown = 0;
     private bool Active = false;
 
+    private Timer Timer = null;
+
     public CooldownTimer(float miliSec)
     {
         Cooldown = miliSec;
@@ -24,14 +26,15 @@ public class CooldownTimer
         }
     }
     private void Run()
-    {
-        Timer timer = new Timer(Cooldown);
-        timer.Elapsed += Stop;
-        timer.Start();
+    {        
+        Timer = new Timer(Cooldown);
+        Timer.Elapsed += Stop;
+        Timer.Start();
     }
     private void Stop(Object source, System.Timers.ElapsedEventArgs e)
     {        
         Active = false;
-        Check = true;       
+        Check = true;
+        Timer.Stop();
     }
 }
