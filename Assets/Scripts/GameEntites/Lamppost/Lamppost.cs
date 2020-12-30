@@ -3,45 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lamppost : MonoBehaviour
+public class Lamppost : MonoBehaviour, IHaveHealth
 {
-    private int Health = 2;
+    [SerializeField] private int startHealth = 2;
+    [SerializeField] private int maxHealth = 0;
+    [SerializeField] private int minHealth = 0;
+
+    private HealthSystem healthSystem;        
 
     public delegate void LamppostCreatedDel(Lamppost lamppost);
     public static event LamppostCreatedDel LamppostCreatedEve;
 
-    public delegate void LamppostHitDel(Lamppost lamppost);
-    public static event LamppostHitDel LamppostHitEve;
-
+    private void Awake()
+    {
+        healthSystem = new HealthSystem(this, startHealth, maxHealth, minHealth);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-        {            
-            TakeDamage();            
+        {
+            ChangeHealth(-1);//Bullet.Damage = 1;
         }
     }
 
-    private void TakeDamage()
-    {
-        if(Health < 0)
-        {
-            Health = 0;
-        }
-
-        if (Health == 0)
-        {
-            LamppostHitEve?.Invoke(this);
-        }
-        else
-        {
-            Health--;
-            LamppostHitEve?.Invoke(this);
-        }
+    public void Die()
+    {       
     }
-
-    public int GetHealth()
+    public void ChangeHealth(int value)
     {
-        return Health;
+        healthSystem.ChangeHealth(value);
+    }        
+    public int GetCurrentHealth()
+    {
+        return healthSystem.GetHealth();
+    }   
+    public GameObject GetGameObject()
+    {
+        return gameObject;
     }
 }
+

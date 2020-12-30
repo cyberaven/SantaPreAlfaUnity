@@ -14,24 +14,22 @@ public class SantaLamppost : MonoBehaviour
         SkeletonAnimation = GetComponent<SkeletonAnimation>();
 
         Lamppost.LamppostCreatedEve += LamppostCreated;
-        Lamppost.LamppostHitEve += LamppostHit;
+        HealthSystem.HealthChangeEve += HealthChange;       
     }
 
-    private void LamppostHit(Lamppost lamppost)
+    private void HealthChange(IHaveHealth haveHealth)
     {
-        if (gameObject == lamppost.gameObject)
+        if(gameObject == haveHealth.GetGameObject())
         {
-            int lampHealth = lamppost.GetHealth();
+            int lampHealth = haveHealth.GetCurrentHealth();
             SkeletonAnimation.AnimationState.SetAnimation(1, Animations[lampHealth], true);
         }
-    
     }
-
     private void LamppostCreated(Lamppost lamppost)
     {
         if (gameObject == lamppost.gameObject)
         {
-            int lampHealth = lamppost.GetHealth();
+            int lampHealth = lamppost.GetCurrentHealth();
             SkeletonAnimation.AnimationState.SetAnimation(1, Animations[lampHealth], true);
         }
     }   

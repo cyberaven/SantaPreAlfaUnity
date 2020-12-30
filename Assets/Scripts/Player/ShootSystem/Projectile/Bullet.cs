@@ -39,10 +39,9 @@ public class Bullet : Projectile
 
     private void LampCollision(Collider2D collision)
     {
-        Lamppost l = collision.gameObject.GetComponent<Lamppost>();
-        int lampHealth = l.GetHealth();
+        Lamppost l = collision.gameObject.GetComponent<Lamppost>();        
 
-        if (lampHealth > 0)
+        if (l.GetCurrentHealth() > 0)
         {
             Die();
         }
