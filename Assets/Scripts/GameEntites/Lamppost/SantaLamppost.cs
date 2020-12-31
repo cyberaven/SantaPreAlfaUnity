@@ -22,7 +22,10 @@ public class SantaLamppost : MonoBehaviour
         if(gameObject == haveHealth.GetGameObject())
         {
             int lampHealth = haveHealth.GetCurrentHealth();
-            SkeletonAnimation.AnimationState.SetAnimation(1, Animations[lampHealth], true);
+            if (lampHealth >= 0)
+            {
+                SkeletonAnimation.AnimationState.SetAnimation(1, Animations[lampHealth], true);
+            }
         }
     }
     private void LamppostCreated(Lamppost lamppost)

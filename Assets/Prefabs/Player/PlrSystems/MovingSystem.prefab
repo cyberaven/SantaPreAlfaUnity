@@ -43,4 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998d52bfd188ef468ef7b14b82031d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1000
+  ControllMoveCurrentSpeed: 5
+  ControllMoveMaxSpeedLimit: 20
+  ControllMoveMinSpeedLimit: 5
+  DirectionMoveCurrentSpeed: 0
+  DirectionMoveMaxSpeedLimit: 0
+  DirectionMoveMinSpeedLimit: 0
