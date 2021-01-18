@@ -19,7 +19,7 @@ public class MovingSystem : MonoBehaviour
     private bool DirectionMoveEnable = false;
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         ControllMove();
         DirectionMove();
@@ -27,7 +27,6 @@ public class MovingSystem : MonoBehaviour
         CheckMinSpeed();
         ShowCurrentSpeedAndLimit();       
     }
-
     
     public void ControllMoveOn(Rigidbody2D rigidbody2D, VariableJoystick variableJoystick, float moveSpeed = 10f, float maxSpeed = 20f, float minSpeed = 10f)
     {
@@ -50,7 +49,7 @@ public class MovingSystem : MonoBehaviour
             }
             else
             {
-                ControllMoveData.Rigidbody2D.AddForce(direction * ControllMoveData.MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+                ControllMoveData.Rigidbody2D.velocity = direction * ControllMoveData.MoveSpeed * Time.fixedDeltaTime;
             }
         }
     }
@@ -67,8 +66,8 @@ public class MovingSystem : MonoBehaviour
     private void DirectionMove()
     {
         if(DirectionMoveEnable == true)
-        {
-            DirectionMoveData.Rigidbody2D.AddForce(DirectionMoveData.Direction * DirectionMoveData.MoveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        {            
+            DirectionMoveData.Rigidbody2D.velocity = DirectionMoveData.Direction * DirectionMoveData.MoveSpeed * Time.fixedDeltaTime;
         }
     }
 

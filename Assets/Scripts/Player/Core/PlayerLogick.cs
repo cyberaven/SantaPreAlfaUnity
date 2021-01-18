@@ -8,6 +8,9 @@ public class PlayerLogick : MonoBehaviour
     private PlayerModel PlayerModel;
 
     private VariableJoystick MoveJoystick;
+    [SerializeField] private float MoveSpeed = 500f;
+    [SerializeField] private float MaxSpeed = 700f;
+    [SerializeField] private float MinSpeed = 100f;
     
     private VariableJoystick ShootJoystick;
     [SerializeField] private ShootSystem ShootSystem;
@@ -80,7 +83,7 @@ public class PlayerLogick : MonoBehaviour
 
     private void MoveSetupPlayerView(PlayerView playerView, VariableJoystick moveJoystick)
     {         
-       playerView.GetMovingSystem().ControllMoveOn(playerView.GetRigidbody2D(), moveJoystick, 20f);
+       playerView.GetMovingSystem().ControllMoveOn(playerView.GetRigidbody2D(), moveJoystick, MoveSpeed, MaxSpeed, MinSpeed);
     }   
 
     public VariableJoystick GetShootingJoystick()

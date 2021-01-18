@@ -466,9 +466,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
-  StartMovingSpeed: 1
-  MaxMovingSpeed: 10
-  MinMovingSpeed: 1
+  StartMovingSpeed: 500
+  MaxMovingSpeed: 700
+  MinMovingSpeed: 100
   PointWinValue: 20
   LevelEnvironment: {fileID: 6799990904788004967}
   WallRightPos: {fileID: 6353087590806189131}
