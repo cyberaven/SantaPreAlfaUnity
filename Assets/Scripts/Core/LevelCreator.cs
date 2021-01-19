@@ -72,7 +72,7 @@ public class LevelCreator : MonoBehaviour
         for (int i = 0; i < MaxLeghtLevel * 10; i++)
         {
             Virus v = Instantiate(virus, parent);
-            v.transform.position = new Vector3(i * 20f, v.transform.position.y, v.transform.position.z);
+            v.transform.position = new Vector3(i * 20f, v.transform.position.y + 10f, v.transform.position.z);
             result.Add(v);
         }
 

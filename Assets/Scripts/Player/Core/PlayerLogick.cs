@@ -43,17 +43,10 @@ public class PlayerLogick : MonoBehaviour
     private void CheckViewPosition()
     {
         PlayerView playerView = PlayerModel.GetPlayerView();
-        Transform viewStartPosition = PlayerModel.GetViewStartPosition();
+        Transform viewStartThrotlePosition = PlayerModel.GetViewStartThrotlePosition();
         float value = 0;
 
-        if (playerView.transform.localPosition.x > viewStartPosition.localPosition.x)
-        {
-            value = playerView.transform.localPosition.x - viewStartPosition.localPosition.x;
-        }
-        if (playerView.transform.localPosition.x < viewStartPosition.localPosition.x)
-        {
-            value = viewStartPosition.localPosition.x - playerView.transform.localPosition.x;
-        }
+        value = playerView.transform.localPosition.x - viewStartThrotlePosition.localPosition.x;
 
         if (value != 0)
         {

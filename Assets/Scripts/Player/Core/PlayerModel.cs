@@ -8,6 +8,7 @@ public class PlayerModel : MonoBehaviour
     [Header("Компоненты Модели")]    
     [SerializeField] private PlayerView PlayerView;
     [SerializeField] private Transform PlayerViewStartPosition;
+    [SerializeField] private Transform PlayerViewStartThrotlePosition;
     [SerializeField] private PlayerLogick PlayerLogick;
   
 
@@ -37,8 +38,12 @@ public class PlayerModel : MonoBehaviour
     {
         return PlayerViewStartPosition;
     }
+    public Transform GetViewStartThrotlePosition()
+    {
+        return PlayerViewStartThrotlePosition;
+    }
 
-   
+
     private void SetViewOnStartPosition()
     {
         PlayerView.transform.localPosition = PlayerViewStartPosition.position;

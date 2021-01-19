@@ -137,6 +137,9 @@ MonoBehaviour:
     type: 3}
   Cooldown: 200
   LiveTime: 2000
+  MoveSpeed: 700
+  MinSpeed: 100
+  MaxSpeed: 700
   BulletVsHome: 1
   BulletVsLampPost: 2
   BulletVsVirus: 5

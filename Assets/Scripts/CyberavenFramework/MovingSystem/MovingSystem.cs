@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class MovingSystem : MonoBehaviour
@@ -15,7 +16,7 @@ public class MovingSystem : MonoBehaviour
     [SerializeField] private float DirectionMoveCurrentSpeed = 0;
     [SerializeField] private float DirectionMoveMaxSpeedLimit = 0;
     [SerializeField] private float DirectionMoveMinSpeedLimit = 0;
-    private DirectionMoveData DirectionMoveData = null;
+    private List<DirectionMoveData> DirectionMoveDatas = new List<DirectionMoveData>();
     private bool DirectionMoveEnable = false;
 
 
@@ -56,7 +57,27 @@ public class MovingSystem : MonoBehaviour
 
     public void DirectionMoveOn(Rigidbody2D rigidbody2D, Vector3 direction, float moveSpeed = 10f, float maxSpeed = 20f, float minSpeed = 10f)
     {
-        DirectionMoveData = new DirectionMoveData(rigidbody2D, direction, moveSpeed, maxSpeed, minSpeed);
+        //тут надо сделать множественное направленное движение
+        if(DirectionMoveDatas.Count == 0)
+        {
+            DirectionMoveDatas.Add(new DirectionMoveData(rigidbody2D, direction, moveSpeed, maxSpeed, minSpeed));
+        }
+        else
+        {
+            bool newDirectionMoveData = true;
+            foreach (DirectionMoveData directionMoveData in DirectionMoveDatas)
+            {
+                if(directionMoveData.Direction == direction)
+                {
+                    newDirectionMoveData = false;                    
+                }                
+            }
+            if (newDirectionMoveData == true)
+            {
+                DirectionMoveDatas.Add(new DirectionMoveData(rigidbody2D, direction, moveSpeed, maxSpeed, minSpeed));
+            }
+        }
+        
         DirectionMoveEnable = true;
     }
     public void DirectionMoveOff()
@@ -66,8 +87,11 @@ public class MovingSystem : MonoBehaviour
     private void DirectionMove()
     {
         if(DirectionMoveEnable == true)
-        {            
-            DirectionMoveData.Rigidbody2D.velocity = DirectionMoveData.Direction * DirectionMoveData.MoveSpeed * Time.fixedDeltaTime;
+        {
+            foreach (DirectionMoveData directionMoveData in DirectionMoveDatas)
+            {
+                directionMoveData.Rigidbody2D.velocity = directionMoveData.Direction * directionMoveData.MoveSpeed * Time.fixedDeltaTime;
+            }            
         }
     }
 
@@ -79,12 +103,12 @@ public class MovingSystem : MonoBehaviour
             ControllMoveMaxSpeedLimit = ControllMoveData.MaxSpeed;
             ControllMoveMinSpeedLimit = ControllMoveData.MinSpeed;
         }
-        if(DirectionMoveEnable)
-        {
-            DirectionMoveCurrentSpeed = DirectionMoveData.CurrentSpeed;
-            DirectionMoveMaxSpeedLimit = DirectionMoveData.MaxSpeed;
-            DirectionMoveMinSpeedLimit = DirectionMoveData.MinSpeed;
-        }           
+        //if(DirectionMoveEnable)
+        //{
+        //    DirectionMoveCurrentSpeed = DirectionMoveData.CurrentSpeed;
+        //    DirectionMoveMaxSpeedLimit = DirectionMoveData.MaxSpeed;
+        //    DirectionMoveMinSpeedLimit = DirectionMoveData.MinSpeed;
+        //}           
     }
 
     private void CheckMaxSpeed()
@@ -95,7 +119,10 @@ public class MovingSystem : MonoBehaviour
         }
         if(DirectionMoveEnable)
         {
-            DirectionMoveData.CheckMaxSpeed();
+            foreach (DirectionMoveData directionMoveData in DirectionMoveDatas)
+            {
+                directionMoveData.CheckMaxSpeed();
+            }            
         }
     }
     private void CheckMinSpeed()
@@ -106,7 +133,10 @@ public class MovingSystem : MonoBehaviour
         }
         if (DirectionMoveEnable)
         {
-            DirectionMoveData.CheckMinSpeed();
+            foreach (DirectionMoveData directionMoveData in DirectionMoveDatas)
+            {
+                directionMoveData.CheckMinSpeed();
+            }
         }
     }   
 }

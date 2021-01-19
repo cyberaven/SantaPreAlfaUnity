@@ -147,3 +147,6 @@ MonoBehaviour:
     type: 3}
   Cooldown: 300
   LiveTime: 5000
+  MoveSpeed: 500
+  MinSpeed: 100
+  MaxSpeed: 700

@@ -5,29 +5,32 @@ using UnityEngine;
 
 public class Virus : MonoBehaviour
 {
+    [SerializeField] private MovingSystem MovingSystem;
+    [SerializeField] private float MoveSpeed = 100f;
+    [SerializeField] private float MaxSpeed = 300f;
+    [SerializeField] private float MinSpeed = 50f;
+
     private Rigidbody2D Rigidbody2D;   
 
     private float MoveAmplitude = 4f;
     private Vector3 TopMovePosition;
     private Vector3 BottomMovePosition; 
-    private float MoveSpeed = 3f;
-
-
+    
+   
     private void Awake()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        
+        MovingSystem = Instantiate(MovingSystem, transform);
+
         TopMovePosition = new Vector3(transform.position.x, transform.position.y + MoveAmplitude, transform.position.z);
         BottomMovePosition = new Vector3(transform.position.x, transform.position.y - MoveAmplitude, transform.position.z);
     }
-    private void Start()
-    {
-        Rigidbody2D.AddForce(Vector3.up * MoveSpeed, ForceMode2D.Impulse);
-    }
+    
     private void Update()
     {
-        Move();        
-    }
+        MoveUpAndDown();       
+    }   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Bullet")
@@ -35,16 +38,16 @@ public class Virus : MonoBehaviour
         }
     }
 
-    private void Move()
+    private void MoveUpAndDown()
     {
         if(transform.position.y > TopMovePosition.y)
-        {          
-            Rigidbody2D.AddForce(Vector3.down * MoveSpeed, ForceMode2D.Impulse);
+        {
+            MovingSystem.DirectionMoveOn(Rigidbody2D, Vector3.down, MoveSpeed, MaxSpeed, MinSpeed);           
         }
         if (transform.position.y < BottomMovePosition.y)
         {
-            Rigidbody2D.AddForce(Vector3.up * MoveSpeed, ForceMode2D.Impulse);
+            MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.down, MoveSpeed, MaxSpeed, MinSpeed);            
         }
-    }      
+    }    
 }
 

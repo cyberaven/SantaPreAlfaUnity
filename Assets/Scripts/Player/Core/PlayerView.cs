@@ -2,7 +2,6 @@
 using UnityEngine;
 using Spine.Unity;
 
-
 public class PlayerView : MonoBehaviour
 {
     [SerializeField] private MovingSystem MovingSystem;

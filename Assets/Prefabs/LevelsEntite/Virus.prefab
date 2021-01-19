@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b9d4f3ccce8794685c48922061e78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 21300000, guid: 291bd798b91ca9c4a82ada8026d502c6, type: 3}
-  - {fileID: 21300000, guid: 51ed422aed7ed294db539e72d5f02be6, type: 3}
-  - {fileID: 21300000, guid: b61bbf25eb694974db38c1ec80cae64b, type: 3}
+  MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
+    type: 3}
+  MoveSpeed: 100
+  MaxSpeed: 300
+  MinSpeed: 50
 --- !u!50 &7677425760970584124
 Rigidbody2D:
   serializedVersion: 4
@@ -107,7 +108,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 6bfc4beafdbf79f4b87f2cfb955bbeb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,8 +126,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 843533515
+  m_SortingLayer: 9
   m_SortingOrder: 0
 --- !u!33 &6364106767179719066
 MeshFilter:

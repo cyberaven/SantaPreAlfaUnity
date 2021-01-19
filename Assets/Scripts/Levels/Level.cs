@@ -39,8 +39,8 @@ public class Level : MonoBehaviour
         WallRightChangePos();                
     }  
    private void PlayerViewChangeXPosEve(float delta)
-   {//тут косяк кажись.
-        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta, MaxMovingSpeed, MinMovingSpeed);
+   {        
+        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta * 100f, MaxMovingSpeed, MinMovingSpeed);
    }
     private void WallRightChangePos()
     {
