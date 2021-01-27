@@ -11,6 +11,7 @@ public class Starter : MonoBehaviour
     [SerializeField] private GameUI GameUI;
     [SerializeField] private LevelCreator LevelCreator;
     [SerializeField] private PlayerCreator PlayerCreator;
+    [SerializeField] private StarsCreator StarsCreator;
 
     public delegate void StartGameDel();
     public static event StartGameDel StartGameEve;
@@ -20,7 +21,8 @@ public class Starter : MonoBehaviour
     {
         GameUI = Instantiate(GameUI);
         LevelCreator = Instantiate(LevelCreator);
-        PlayerCreator = Instantiate(PlayerCreator);        
+        PlayerCreator = Instantiate(PlayerCreator);
+        StarsCreator = Instantiate(StarsCreator);
     }
     private void OnEnable()
     {

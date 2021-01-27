@@ -344,6 +344,8 @@ MonoBehaviour:
     type: 3}
   PlayerCreator: {fileID: 2415268943382327778, guid: 77b3aba643e66194da14d08efa2ae9c2,
     type: 3}
+  StarsCreator: {fileID: 6672484496419196802, guid: 311dd8c305423c745a7509237ad94ea1,
+    type: 3}
 --- !u!4 &1406247034
 Transform:
   m_ObjectHideFlags: 0
