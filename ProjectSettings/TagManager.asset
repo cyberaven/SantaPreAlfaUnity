@@ -8,6 +8,8 @@ TagManager:
   - House
   - Lamppost
   - Virus
+  - Bomb
+  - StarCloud
   layers:
   - Default
   - TransparentFX
@@ -80,6 +82,9 @@ TagManager:
     locked: 0
   - name: Santa
     uniqueID: 3059432103
+    locked: 0
+  - name: StarCloud
+    uniqueID: 1657118621
     locked: 0
   - name: GameUI
     uniqueID: 1020032709

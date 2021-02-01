@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+    [SerializeField] private Transform StarsCreatePoint;
+    private bool StarsCreated = false;
+
     private SkeletonAnimation SkeletonAnimation;
     [SerializeField] private List<AnimationReferenceAsset> Animations = new List<AnimationReferenceAsset>();
     private int CurrentAnimation = 0;
@@ -39,9 +42,13 @@ public class House : MonoBehaviour
 
     private void CreateStars()
     {
-        if (CurrentAnimation == Animations.Count - 1)
+        if (!StarsCreated)
         {
-            HouseCreateStarsEve?.Invoke(5, transform.position);
+            if (CurrentAnimation == Animations.Count)
+            {
+                HouseCreateStarsEve?.Invoke(5, StarsCreatePoint.position);
+                StarsCreated = true;
+            }
         }
     }
 

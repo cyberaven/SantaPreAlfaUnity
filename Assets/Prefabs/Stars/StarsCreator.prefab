@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91b1f39462c28f4eb661e4338efd662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StarsCloud: {fileID: 1644737800717609634, guid: 08a2caa2cdd9fcc429d24ad6af831ff2,
+    type: 3}
