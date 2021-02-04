@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovingSystem: {fileID: 8459338303271951592, guid: 7a38f314a424aef47b200e030d6e03cb,
     type: 3}
-  StartMovingSpeed: 500
+  StartMovingSpeed: 300
   MaxMovingSpeed: 700
   MinMovingSpeed: 100
   PointWinValue: 20
