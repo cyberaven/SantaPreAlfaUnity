@@ -40,7 +40,7 @@ public class Level : MonoBehaviour
     }  
    private void PlayerViewChangeXPosEve(float delta)
    {        
-        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta * 100f, MaxMovingSpeed, MinMovingSpeed);
+        MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta * 100f, MaxMovingSpeed, MinMovingSpeed);        
    }
     private void WallRightChangePos()
     {

@@ -16,6 +16,9 @@ public class PlayerLogick : MonoBehaviour
     [SerializeField] private ShootSystem ShootSystem;
     [SerializeField] private float ShootJoystickActionLimiter = 0.5f;
 
+    [SerializeField] private Transform SpeedLimiterLeft;
+    [SerializeField] private Transform SpeedLimiterRight;
+
     public delegate void PlayerViewChangeXPosDel(float x);
     public static event PlayerViewChangeXPosDel PlayerViewChangeXPosEve;
 
@@ -42,12 +45,15 @@ public class PlayerLogick : MonoBehaviour
 
     private void CheckViewPosition()
     {
-        PlayerView playerView = PlayerModel.GetPlayerView();
-        Transform viewStartThrotlePosition = PlayerModel.GetViewStartThrotlePosition();
+        PlayerView playerView = PlayerModel.GetPlayerView();        
+        
+        float x = Vector2.Distance(SpeedLimiterLeft.transform.localPosition, SpeedLimiterRight.transform.localPosition);
+        float y = Vector2.Distance(SpeedLimiterLeft.transform.localPosition, playerView.transform.localPosition);
         float value = 0;
 
-        value = playerView.transform.localPosition.x - viewStartThrotlePosition.localPosition.x;
-
+        value = (y * 100) / x;
+        value = value / 10;
+        
         if (value != 0)
         {
             PlayerViewChangeXPosEve?.Invoke(value);

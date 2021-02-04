@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class StarsCreator : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem StarsCloud;
-
+    [SerializeField] private ParticleSystem StarsCloud;    
 
     private void OnEnable()
     {
@@ -17,6 +16,11 @@ public class StarsCreator : MonoBehaviour
         House.HouseCreateStarsEve += HouseCreateStars;
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void HouseCreateStars(int count, Vector3 position)
     {
         ParticleSystem sc = Instantiate(StarsCloud);                
@@ -24,4 +28,9 @@ public class StarsCreator : MonoBehaviour
         emission.rateOverTime = count;
         sc.transform.position = position;
     }
+}
+
+public class MoveStarsCont
+{
+
 }
