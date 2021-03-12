@@ -7,10 +7,10 @@ public class MainMenuPanel : Panel
 {
     private void Awake()
     {
-        StartButton.StartButtonClkEve += StartButtonClk;
+        StartLevelButton.StartLevelButtonClkEve += StartButtonClk;
     }
 
-    private void StartButtonClk()
+    private void StartButtonClk(int levelId, EPlrViewAssetName ePlrViewAssetName, ELvlAssetName eLvlAssetName)
     {
         Hide();
     }

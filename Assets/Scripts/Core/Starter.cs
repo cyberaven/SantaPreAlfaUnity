@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Starter : MonoBehaviour
-{
-    [SerializeField] private int LevelId = 0;
-    [SerializeField] private ELvlAssetName LvlAssetName = ELvlAssetName.NONE;
-    [SerializeField] private EPlrViewAssetName PlrViewAssetName = EPlrViewAssetName.NONE;
-    [Space]
+{    
     [SerializeField] private GameUI GameUI;
     [SerializeField] private LevelCreator LevelCreator;
     [SerializeField] private PlayerCreator PlayerCreator;
@@ -26,17 +22,17 @@ public class Starter : MonoBehaviour
     }
     private void OnEnable()
     {
-        StartButton.StartButtonClkEve += StartButtonClk;
+        StartLevelButton.StartLevelButtonClkEve += StartLevelButtonClk;
     }
     private void OnDisable()
     {
-        StartButton.StartButtonClkEve -= StartButtonClk;
+        StartLevelButton.StartLevelButtonClkEve -= StartLevelButtonClk;
     }
 
-    private void StartButtonClk()
+    private void StartLevelButtonClk(int levelId, EPlrViewAssetName ePlrViewAssetName, ELvlAssetName eLvlAssetName)
     {
-        PlayerModel player = PlayerCreator.CreatePlayer(PlrViewAssetName);
-        Level l = LevelCreator.CreateLevel(0, LvlAssetName);         
+        PlayerModel player = PlayerCreator.CreatePlayer(ePlrViewAssetName);
+        Level l = LevelCreator.CreateLevel(levelId, eLvlAssetName);
         StartGameEve?.Invoke();
     }
 }

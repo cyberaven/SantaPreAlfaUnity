@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - {fileID: 4043464230688628535, guid: 7a6034d7f653f9242923741fb7fbf9f7, type: 3}
+  - {fileID: 4043464230688628535, guid: ba8eb325bc647e64999352f8bcec7672, type: 3}
   LevelViewAssets:
   - {fileID: 2061569810367433401, guid: 7faa8629ece8c774895918d69f268132, type: 3}
   MaxLeghtLevel: 10

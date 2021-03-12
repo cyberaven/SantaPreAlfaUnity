@@ -7,32 +7,24 @@ public class LevelCreator : MonoBehaviour
 {
     [SerializeField] private List<Level> Levels = new List<Level>();   
     [Space]
-    [SerializeField] private List<LevelViewAsset> LevelViewAssets = new List<LevelViewAsset>();
-    [Space]
-    [SerializeField] private int MaxLeghtLevel = 10;
+    [SerializeField] private List<LevelViewAsset> LevelViewAssets = new List<LevelViewAsset>();    
 
     public delegate void LevelCreatedDel(Level level);
     public static event LevelCreatedDel LevelCreatedEve;
 
-    public Level CreateLevel(int id, ELvlAssetName name, int maxLeghtLevel = 10)
+    public Level CreateLevel(int id, ELvlAssetName name)
     {
-        MaxLeghtLevel = maxLeghtLevel;
-
-        if (id == 0)
-        {
-            Level l = CreateLevelWithRandomEnvironment(name);           
-            LevelCreatedEve?.Invoke(l);
-            return l;
-        }
-        else
-        {
-            LevelViewAsset levelViewAsset = GetLevelViewAsset(name);
-            Level l = Instantiate(Levels[id], transform);            
-            LevelCreatedEve?.Invoke(l);
-            return l;
-        }
-
-        throw new Exception("LevelCreator CreateLevel Error.");
+        //левел должен содержать в себе локации
+        //есть локации заранее заготовленные, а есть случайные,
+        //левел удаляет пройденые локации слева и создает новые справа
+        //в левеле есть правила относительно того когда какая локация может загрузится
+        //на выходе получаем бесконечный левел
+        //если тригеры появления локации конца левела не были соблюдены.
+        LevelViewAsset levelViewAsset = GetLevelViewAsset(name);
+        Level l = Instantiate(Levels[id], transform);
+        l.LevelViewAsset = levelViewAsset;
+        LevelCreatedEve?.Invoke(l);
+        return l;        
     }
 
     private Level CreateLevelWithRandomEnvironment(ELvlAssetName name)

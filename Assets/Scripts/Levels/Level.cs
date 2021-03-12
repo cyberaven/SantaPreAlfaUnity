@@ -13,9 +13,11 @@ public class Level : MonoBehaviour
     [Space]
     [SerializeField] public float PointWinValue = 0;
     [SerializeField] public LevelEnvironment LevelEnvironment;
-    [SerializeField] private Transform WallRightPos;
-    
-    private Rigidbody2D Rigidbody2D; 
+    [SerializeField] private Transform WallRightPos;    
+    private Rigidbody2D Rigidbody2D;
+
+    private LevelViewAsset levelViewAsset;
+    public LevelViewAsset LevelViewAsset { get => levelViewAsset; set => levelViewAsset = value; }
 
     private void OnEnable()
     {
@@ -50,5 +52,9 @@ public class Level : MonoBehaviour
     private void StartGame()
     {
         MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed, MaxMovingSpeed, MinMovingSpeed);
+    }
+    public void BuildLevel()
+    {
+
     }
 }
