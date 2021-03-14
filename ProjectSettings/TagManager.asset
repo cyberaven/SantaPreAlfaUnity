@@ -10,6 +10,10 @@ TagManager:
   - Virus
   - Bomb
   - StarCloud
+  - LocationEndTriger
+  - LocationStartTriger
+  - LevelWallRight
+  - LevelWallLeft
   layers:
   - Default
   - TransparentFX

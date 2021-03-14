@@ -16,8 +16,17 @@ public class Level : MonoBehaviour
     [SerializeField] private Transform WallRightPos;    
     private Rigidbody2D Rigidbody2D;
 
+    
     private LevelViewAsset levelViewAsset;
     public LevelViewAsset LevelViewAsset { get => levelViewAsset; set => levelViewAsset = value; }
+    
+    
+    [SerializeField] private List<LevelLocation> levelLocations = new List<LevelLocation>();
+    public List<LevelLocation> LevelLocations { get => levelLocations;}
+
+  
+    [SerializeField] private LevelBuilder LevelBuilder;
+
 
     private void OnEnable()
     {
@@ -34,27 +43,19 @@ public class Level : MonoBehaviour
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         MovingSystem = Instantiate(MovingSystem, transform);
+        LevelBuilder = Instantiate(LevelBuilder, transform);
     }
-
-    private void Start()    
-    {
-        WallRightChangePos();                
-    }  
-   private void PlayerViewChangeXPosEve(float delta)
-   {        
+     
+    private void PlayerViewChangeXPosEve(float delta)
+    {        
         MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed + delta * 100f, MaxMovingSpeed, MinMovingSpeed);        
-   }
-    private void WallRightChangePos()
-    {
-        Vector3 wallPos = WallRightPos.position;
-        WallRightPos.position = new Vector3(wallPos.x * 100, wallPos.y, wallPos.z);
-    }
+    }   
     private void StartGame()
     {
         MovingSystem.DirectionMoveOn(Rigidbody2D, -Vector3.right, StartMovingSpeed, MaxMovingSpeed, MinMovingSpeed);
     }
-    public void BuildLevel()
+    public void BuildStartLevel()
     {
-
-    }
+        LevelBuilder.Run(this);
+    }  
 }

@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 4043464230688628535}
   - component: {fileID: 562462710450086382}
   m_Layer: 0
-  m_Name: Level
+  m_Name: RandLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,6 +472,10 @@ MonoBehaviour:
   PointWinValue: 20
   LevelEnvironment: {fileID: 6799990904788004967}
   WallRightPos: {fileID: 6353087590806189131}
+  levelLocations:
+  - {fileID: 6946579968486066184, guid: d56d448613ed7dd47a0fa754bbd85a00, type: 3}
+  LevelBuilder: {fileID: 7728925162907023631, guid: 23901b8a275c7ba4b899a456dc9b2b21,
+    type: 3}
 --- !u!50 &562462710450086382
 Rigidbody2D:
   serializedVersion: 4

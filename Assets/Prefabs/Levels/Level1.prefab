@@ -276,9 +276,9 @@ GameObject:
   - component: {fileID: 6353087590806189131}
   - component: {fileID: 6002450286712364686}
   - component: {fileID: 3737180804912802460}
-  - component: {fileID: 2195392882406512667}
+  - component: {fileID: 3819037464123112788}
   m_Layer: 0
-  m_Name: WallRight
+  m_Name: LevelWallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &2195392882406512667
+--- !u!114 &3819037464123112788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5439676421917173780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be87c10665ef40e4e9cfa3b03bd43449, type: 3}
+  m_Script: {fileID: 11500000, guid: b1c3472121cf81944a505a34fa3bfb0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5649007923653603077
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 4043464230688628535}
   - component: {fileID: 562462710450086382}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,6 +472,10 @@ MonoBehaviour:
   PointWinValue: 20
   LevelEnvironment: {fileID: 6799990904788004967}
   WallRightPos: {fileID: 6353087590806189131}
+  levelLocations:
+  - {fileID: 6946579968486066184, guid: d56d448613ed7dd47a0fa754bbd85a00, type: 3}
+  LevelBuilder: {fileID: 7728925162907023631, guid: 23901b8a275c7ba4b899a456dc9b2b21,
+    type: 3}
 --- !u!50 &562462710450086382
 Rigidbody2D:
   serializedVersion: 4
@@ -536,7 +540,7 @@ GameObject:
   - component: {fileID: 2818684541891993532}
   - component: {fileID: 6695045995507269628}
   m_Layer: 0
-  m_Name: WallLeft
+  m_Name: LevelWallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

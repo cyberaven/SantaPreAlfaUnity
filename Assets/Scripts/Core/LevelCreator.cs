@@ -23,6 +23,7 @@ public class LevelCreator : MonoBehaviour
         LevelViewAsset levelViewAsset = GetLevelViewAsset(name);
         Level l = Instantiate(Levels[id], transform);
         l.LevelViewAsset = levelViewAsset;
+        l.BuildStartLevel();
         LevelCreatedEve?.Invoke(l);
         return l;        
     }
